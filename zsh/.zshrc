@@ -5,19 +5,52 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-DEVELOPMENT_MODE=TRUE
-
-alias mmr='python manage.py makemigrations&&python manage.py migrate&&python manage.py runserver'
-alias gca='git add .&&git commit -m '
-alias ll='ls -alh'
-alias gpl='git pull'
-alias gph='git push'
-alias c='clear'
-
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /home/daan/.linuxbrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lt='ls --human-readable --size -1 -S --classify'
+alias c='clear'
+
+# virtual env
+alias cv="virtualenv venv"
+alias av=". venv/bin/activate"
+alias dv="deactivate"
+alias v="cv; av"
+
+# git
+alias gca='git add .&&git commit -m'
+alias gpl='git pull'
+alias gph='git push'
+alias gcp='git checkout production'
+alias gc='git checkout'
+alias gmp='git merge production'
+alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
+
+# kubectl
+alias k='kubectl'
+alias kd='kubectl describe pods'
+alias kgp='kubectl get pods'
+alias kgap='k get pods --all-namespaces'
+alias ksc='k config set-context --current --namespace='
+kshell() {
+	k exec --stdin --tty $1 -- /bin/bash
+}
+
+# docker
+dockerdebug() {
+	docker run -it $1 /bin/bash
+}
+
+# switch between azure subscriptions
+function azctx() {
+    local sub
+    sub=$(az account list --query "[].name" -o tsv | sort -f | fzf -q "$1")
+    [ -n "$sub" ] && az account set --subscription "$sub"
+}
+
