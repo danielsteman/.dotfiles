@@ -29,6 +29,7 @@ alias gpl='git pull'
 alias gph='git push'
 alias gcp='git checkout production'
 alias gc='git checkout'
+alias gs='git stash'
 alias gmp='git merge production'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 
