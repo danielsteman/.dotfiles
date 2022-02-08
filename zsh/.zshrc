@@ -29,7 +29,8 @@ alias gpl='git pull'
 alias gph='git push'
 alias gcp='git checkout production'
 alias gc='git checkout'
-alias gs='git stash'
+alias gsh='git stash'
+alias gshp='git stash pop'
 alias gmp='git merge production'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 
@@ -39,11 +40,13 @@ alias kd='kubectl describe pods'
 alias kgp='kubectl get pods'
 alias kgap='k get pods --all-namespaces'
 alias ksc='k config set-context --current --namespace='
+
+# open shell in pod
 kshell() {
 	k exec --stdin --tty $1 -- /bin/bash
 }
 
-# docker
+# open shell in container
 dockerdebug() {
 	docker run -it $1 /bin/bash
 }
@@ -55,3 +58,9 @@ function azctx() {
     [ -n "$sub" ] && az account set --subscription "$sub"
 }
 
+function pr() {
+	local repo=$(basename `git rev-parse --show-toplevel`)
+	local branch=$(git rev-parse --abbrev-ref HEAD)
+	local target="${TARGET:=production}"
+	az repos pr create --title $0 --description $1 --repository "$repo" --source-branch "$branch" --target-branch "$target" --squash "true"
+}
