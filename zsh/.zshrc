@@ -23,6 +23,9 @@ alias av=". venv/bin/activate"
 alias dv="deactivate"
 alias v="cv; av"
 
+# pip
+alias pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt"
+
 # git
 alias gca='git add .&&git commit -m'
 alias gpl='git pull'
@@ -62,5 +65,7 @@ function pr() {
 	local repo=$(basename `git rev-parse --show-toplevel`)
 	local branch=$(git rev-parse --abbrev-ref HEAD)
 	local target="${TARGET:=production}"
-	az repos pr create --title $0 --description $1 --repository "$repo" --source-branch "$branch" --target-branch "$target" --squash "true"
+	#az repos pr create --title $0 --description $1 --repository "$repo" --source-branch "$branch" --target-branch "$target" --squash "true"
+	echo $1
+	echo $2
 }
