@@ -1,0 +1,49 @@
+{
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+    ],
+
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.tabSize": 2,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "sync.gist": "2fbd321129b45e4206af7a4fd2799f02",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "eslint.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "html", "typescriptreact"],
+    "notebook.output.textLineLimit": 500,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active",
+    "gitlens.blame.line.enabled": false,// was working in previous versions
+    "gitlens.currentLine.enabled": false,// in modern version
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "rust-analyzer.inlayHints.enable": true,
+    "window.zoomLevel": 1,
+    "typescript.updateImportsOnFileMove.enabled": "always"
+}
