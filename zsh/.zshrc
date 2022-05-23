@@ -41,8 +41,10 @@ alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 alias k='kubectl'
 alias kd='kubectl describe pods'
 alias kgp='kubectl get pods'
+alias kgs='kubectl get svc'
 alias kgap='k get pods --all-namespaces'
 alias ksc='k config set-context --current --namespace='
+alias kverbs='kubectl api-resources --verbs=list'
 
 # open shell in pod
 kshell() {
@@ -69,3 +71,8 @@ function pr() {
 	echo $1
 	echo $2
 }
+
+# keybinds
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word
+
