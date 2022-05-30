@@ -45,6 +45,7 @@ alias kgs='kubectl get svc'
 alias kgap='k get pods --all-namespaces'
 alias ksc='k config set-context --current --namespace='
 alias kverbs='kubectl api-resources --verbs=list'
+alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh'
 
 # open shell in pod
 kshell() {
@@ -76,3 +77,5 @@ function pr() {
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
+# increase history size
+export HISTSIZE=2000
