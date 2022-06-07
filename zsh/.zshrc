@@ -84,6 +84,3 @@ bindkey ";5D" backward-word
 # increase history size
 export HISTSIZE=2000
 
-# kube-ps1
-source /home/daan/kube-ps1/kube-ps1.sh
-PROMPT='$(kube_ps1)'$PROMPT
