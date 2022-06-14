@@ -1,5 +1,3 @@
 ### Get started
-Clone repo in `~/` and `./install.sh`
+Clone repo in `~/` and `make`
 
-### To-do
-Create `install.sh`
