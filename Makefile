@@ -1,5 +1,8 @@
-all: install_brew
+.PHONY: create_symlinks
 
-install_brew:
-	@echo "Installing Brew"
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+create_symlinks:
+		copy_files
+
+prerequisites: create_symlinks
+
+target: prerequisites
