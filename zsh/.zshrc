@@ -10,9 +10,6 @@ source /home/daan/.linuxbrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Start tmux with zsh
-if [ "$TMUX" = "" ]; then tmux; fi
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
