@@ -47,6 +47,9 @@ alias ksc='k config set-context --current --namespace='
 alias kverbs='kubectl api-resources --verbs=list'
 alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh'
 
+# terraform
+alias tf='terraform'
+
 # open shell in pod
 kshell() {
 	k exec --stdin --tty $1 -- /bin/bash
