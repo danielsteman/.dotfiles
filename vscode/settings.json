@@ -2,7 +2,6 @@
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
     ],
-
     "[python]": {
         "editor.tabSize": 4
     },
@@ -15,6 +14,21 @@
     "[yaml]": {
         "editor.tabSize": 2
     },
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
+    "files.associations": {
+        "pipeline.yml": "azure-pipelines",
+        "yaml/pipelinevariables.yml": "azure-pipelines",
+    },
+    "[azure-pipelines]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
@@ -23,9 +37,6 @@
         "jupyter-notebook": "left"
     },
     "editor.tabSize": 2,
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "sync.gist": "2fbd321129b45e4206af7a4fd2799f02",
     "workbench.colorTheme": "One Dark Pro Darker",
     "[json]": {
@@ -39,11 +50,39 @@
     "notebook.output.textLineLimit": 500,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs":"active",
-    "gitlens.blame.line.enabled": false,// was working in previous versions
     "gitlens.currentLine.enabled": false,// in modern version
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "rust-analyzer.inlayHints.enable": true,
-    "window.zoomLevel": 1,
-    "typescript.updateImportsOnFileMove.enabled": "always"
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    // "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.profiles.linux": {
+        "zsh": {
+            "path": "/bin/zsh",
+            "args": ["-l", "-i"]
+        }
+    },
+    "remote.SSH.remotePlatform": {
+        "10.146.8.38": "linux"
+    },
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 12,
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled",
+        "vscode-kubernetes.minikube-path.linux": "/home/daan/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
+    "explorer.sortOrder": "type",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "mssql.connections": [
+        {
+            "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:tcp:iendanalyticssqlserver.database.windows.net,1433|db:OnlineData_T|user:cxfzorg|isConnectionString:true",
+            "profileName": "asfasffsf",
+            "database": "OnlineData_T",
+            "user": "cxfzorg",
+            "server": "tcp:iendanalyticssqlserver.database.windows.net,1433",
+            "authenticationType": "SqlLogin",
+            "savePassword": true,
+            "password": ""
+        }
+    ]
 }
