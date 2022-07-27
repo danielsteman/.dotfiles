@@ -50,6 +50,9 @@ alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
 # terraform
 alias tf='terraform'
 
+# neovim
+alias vim='nvim'
+
 # open shell in pod
 kshell() {
 	k exec --stdin --tty $1 -- /bin/bash
