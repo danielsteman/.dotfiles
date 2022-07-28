@@ -46,6 +46,7 @@ alias kgap='k get pods --all-namespaces'
 alias ksc='k config set-context --current --namespace='
 alias kverbs='kubectl api-resources --verbs=list'
 alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh'
+alias busyshell='k exec -it busybox -- /bin/sh'
 
 # terraform
 alias tf='terraform'
