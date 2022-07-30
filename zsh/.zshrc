@@ -75,6 +75,7 @@ function azctx() {
     [ -n "$sub" ] && az account set --subscription "$sub"
 }
 
+# create azure devops pull request
 function pr() {
 	local repo=$(basename `git rev-parse --show-toplevel`)
 	local branch=$(git rev-parse --abbrev-ref HEAD)
@@ -82,6 +83,11 @@ function pr() {
 	#az repos pr create --title $0 --description $1 --repository "$repo" --source-branch "$branch" --target-branch "$target" --squash "true"
 	echo $1
 	echo $2
+}
+
+# list azure devops repos
+lrps() {
+  az repos list | jq ".[].name" | fzf
 }
 
 # keybinds
