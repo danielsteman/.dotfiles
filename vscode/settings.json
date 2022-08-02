@@ -18,7 +18,7 @@
         "editor.formatOnSave": true
     },
     "files.associations": {
-        "pipeline.yml": "azure-pipelines",
+        "pipeline.yaml": "azure-pipelines",
         "yaml/pipelinevariables.yml": "azure-pipelines",
     },
     "[azure-pipelines]": {
@@ -73,16 +73,5 @@
     },
     "explorer.sortOrder": "type",
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "mssql.connections": [
-        {
-            "connectionString": "Microsoft.SqlTools|itemtype:Profile|server:tcp:iendanalyticssqlserver.database.windows.net,1433|db:OnlineData_T|user:cxfzorg|isConnectionString:true",
-            "profileName": "asfasffsf",
-            "database": "OnlineData_T",
-            "user": "cxfzorg",
-            "server": "tcp:iendanalyticssqlserver.database.windows.net,1433",
-            "authenticationType": "SqlLogin",
-            "savePassword": true,
-            "password": ""
-        }
-    ]
+    "mssql.connections": []
 }
