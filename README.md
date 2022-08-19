@@ -1,3 +1,3 @@
 ### Get started
-Clone repo in `~/` and `make`
+`git clone https://github.com/danielsteman/.dotfiles.git ~/.dotfiles`
 
