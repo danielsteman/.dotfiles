@@ -1,3 +1,4 @@
+mkdir ~/.config
 ln -s ~/.dotfiles/nvim/ ~/.config/nvim
 cp ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 
