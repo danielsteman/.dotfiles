@@ -39,7 +39,10 @@ echo \
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # install node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-chmod +x install.sh
-./install.sh
-nvm install --lts
+sudo apt -y install nodejs
+sudo apt -y install npm
+
+# npm packages
+# change rights of /usr/local to install npm packages (probably not save this way, so don't try this at home)
+sudo chmod -R 777 /usr/local
+npm i -g gitmoji-cli
