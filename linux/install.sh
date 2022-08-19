@@ -47,7 +47,7 @@ sudo apt -y install npm
 sudo chmod -R 777 /usr/local
 npm i -g gitmoji-cli
 
-# install kubectl
+# install kubectl and more
 sudo apt-get install -y ca-certificates curl
 sudo apt-get install -y apt-transport-https
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
