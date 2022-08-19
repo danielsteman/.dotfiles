@@ -2,7 +2,8 @@ sudo apt update
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt -y install python3.9
 sudo apt -y install neovim
-sudo apt -y install zsh
+
+# install terraform
 
 wget -O- https://apt.releases.hashicorp.com/gpg | \
     gpg --dearmor | \
@@ -17,6 +18,8 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
     sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 sudo apt install terraform
+
+# install docker
 
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
@@ -34,3 +37,9 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+# install node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+chmod +x install.sh
+./install.sh
+nvm install --lts
