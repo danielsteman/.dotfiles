@@ -56,4 +56,7 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 
 # install k8s tools
-sudo apt install kubectx
+sudo git clone https://github.com/ahmetb/kubectx /usr/local/kubectx
+sudo ln -s /usr/local/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /usr/local/kubectx/kubens /usr/local/bin/kubens
+
