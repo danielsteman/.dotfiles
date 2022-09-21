@@ -7,9 +7,6 @@ fi
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# Source Kubesess
-source ~/.kube/kubesess/scripts/sh/completion.sh
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -50,6 +47,20 @@ alias ksc='k config set-context --current --namespace='
 alias kverbs='kubectl api-resources --verbs=list'
 alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh'
 alias busyshell='k exec -it busybox -- /bin/sh'
+
+kgsy() {
+  most_recent_svc=`kubectl get svc --sort-by=.metadata.creationTimestamp -o jsonpath="{.items[0].metadata.name}"`
+  echo $most_recent_svc
+  yaml=`kubectl get svc $most_recent_svc -o yaml`
+  echo $yaml
+}
+
+kgpy() {
+  most_recent_pod=`kubectl get pod --sort-by=.metadata.creationTimestamp -o jsonpath="{.items[0].metadata.name}"`
+  echo $most_recent_pod
+  yaml=`kubectl get pod $most_recent_svc -o yaml`
+  echo $yaml
+}
 
 # terraform
 alias tf='terraform'
