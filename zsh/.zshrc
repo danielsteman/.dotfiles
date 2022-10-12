@@ -35,6 +35,7 @@ alias gc='git checkout'
 alias gsh='git stash'
 alias gshp='git stash pop'
 alias gmp='git merge production'
+alias gmd='git merge development'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 
 # kubectl
@@ -67,6 +68,9 @@ alias tf='terraform'
 
 # neovim
 alias vim='nvim'
+
+# rust
+alias cr='cargo run'
 
 # open shell in pod
 kshell() {
