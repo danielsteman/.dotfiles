@@ -1,23 +1,31 @@
-local set = vim.opt
+local Settings = {}
 
-set.expandtab = true
-set.smarttab = true
-set.shiftwidth = 2
-set.tabstop = 2
+function Settings.setup()
 
-set.hlsearch = true
-set.incsearch = true
-set.ignorecase = true
-set.smartcase = true
+  local set = vim.opt
 
-set.splitbelow = true
-set.splitright = true
-set.wrap = false
-set.scrolloff = 5
-set.fileencoding = 'utf-8'
-set.termguicolors = true
+  set.expandtab = true
+  set.smarttab = true
+  set.shiftwidth = 2
+  set.tabstop = 2
 
-set.relativenumber = true
-set.cursorline = true
+  set.hlsearch = true
+  set.incsearch = true
+  set.ignorecase = true
+  set.smartcase = true
 
-set.hidden = true
+  set.splitbelow = true
+  set.splitright = true
+  set.wrap = false
+  set.scrolloff = 5
+  set.fileencoding = 'utf-8'
+  set.termguicolors = true
+
+  set.relativenumber = true
+  set.cursorline = true
+
+  set.hidden = true
+
+end
+
+return Settings
