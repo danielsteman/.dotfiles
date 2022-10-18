@@ -41,5 +41,4 @@ luac.out
 
 .git/
 
-plugin/packer_compiled.lua
-lua/packer_compiled.lua
+**/packer_compiled.lua
