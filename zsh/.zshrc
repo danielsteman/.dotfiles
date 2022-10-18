@@ -112,8 +112,10 @@ lrps() {
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-SAVEHIST=1000  # Save most-recent 1000 lines
+SAVEHIST=10000 
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
+alias hist='history 0'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
