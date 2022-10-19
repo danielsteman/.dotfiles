@@ -50,17 +50,15 @@ alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
 alias busyshell='k exec -it busybox -- /bin/sh'
 
 kgsy() {
-  most_recent_svc=`kubectl get svc --sort-by=.metadata.creationTimestamp -o jsonpath="{.items[0].metadata.name}"`
-  echo $most_recent_svc
-  yaml=`kubectl get svc $most_recent_svc -o yaml`
-  echo $yaml
+  local svc
+  svc=$(kubectl get svc -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | fzf)
+  kubectl get svc "$svc" -o yaml
 }
 
 kgpy() {
-  most_recent_pod=`kubectl get pod --sort-by=.metadata.creationTimestamp -o jsonpath="{.items[0].metadata.name}"`
-  echo $most_recent_pod
-  yaml=`kubectl get pod $most_recent_svc -o yaml`
-  echo $yaml
+  local pod
+  pod=$(kubectl get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | fzf)
+  kubectl get pod "$pod" -o yaml
 }
 
 # terraform
