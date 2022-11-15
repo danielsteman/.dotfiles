@@ -13,3 +13,5 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "rustup"
 
+# package managers
+brew "yarn"
