@@ -3,6 +3,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt -y install python3
 sudo apt -y install python3-pip
 sudo apt -y install neovim
+sudo apt -y install jq
 
 # install terraform
 
