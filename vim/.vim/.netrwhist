@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/danielsteman'
 let g:netrw_dirhist_9='/Users/danielsteman/Repos/resume/frontend/src/components/Contact'
 let g:netrw_dirhist_8='/Users/danielsteman/Repos/resume/frontend/src/components'
 let g:netrw_dirhist_7='/Users/danielsteman/Repos/resume/frontend/src/components/About'

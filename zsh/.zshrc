@@ -39,6 +39,7 @@ alias gc='git checkout'
 alias gsh='git stash'
 alias gshp='git stash pop'
 alias gmp='git merge production'
+alias gmd='git merge development'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 
 # kubectl
@@ -52,11 +53,26 @@ alias kverbs='kubectl api-resources --verbs=list'
 alias krd='kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh'
 alias busyshell='k exec -it busybox -- /bin/sh'
 
+kgsy() {
+  local svc
+  svc=$(kubectl get svc -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | fzf)
+  kubectl get svc "$svc" -o yaml
+}
+
+kgpy() {
+  local pod
+  pod=$(kubectl get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | fzf)
+  kubectl get pod "$pod" -o yaml
+}
+
 # terraform
 alias tf='terraform'
 
 # neovim
 alias vim='nvim'
+
+# rust
+alias cr='cargo run'
 
 # open shell in pod
 kshell() {
@@ -98,6 +114,10 @@ lrps() {
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-# increase history size
-export HISTSIZE=2000
+SAVEHIST=10000 
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+alias hist='history 0'
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
