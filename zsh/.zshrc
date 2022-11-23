@@ -90,31 +90,31 @@ dockerdebug() {
 
 # switch between azure subscriptions
 function azctx() {
-    local sub
-    sub=$(az account list --query "[].name" -o tsv | sort -f | fzf -q "$1")
-    [ -n "$sub" ] && az account set --subscription "$sub"
+  local sub
+  sub=$(az account list --query "[].name" -o tsv | sort -f | fzf -q "$1")
+  [ -n "$sub" ] && az account set --subscription "$sub"
 }
 
-# create azure devops pull request
-function pr() {
-	local repo=$(basename `git rev-parse --show-toplevel`)
-	local branch=$(git rev-parse --abbrev-ref HEAD)
-	local target="${TARGET:=production}"
-	#az repos pr create --title $0 --description $1 --repository "$repo" --source-branch "$branch" --target-branch "$target" --squash "true"
-	echo $1
-	echo $2
-}
-
-# list azure devops repos
-lrps() {
-  az repos list | jq ".[].name" | fzf
+# List repos in azure devops
+# Pull or `cd` the selected repo
+function azgetrepo() {
+  local name
+  name=$(\
+    az repos list \
+    --organization https://dev.azure.com/asrnl \
+    --project analyticslab-p \
+    --query "[].name" -o tsv \
+    | sort -f \
+    | fzf \
+  )
+  echo "$name"
 }
 
 # keybinds
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-SAVEHIST=10000 
+SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
 alias hist='history 0'
