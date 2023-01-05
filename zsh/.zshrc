@@ -14,6 +14,9 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# show history from 1
+alias hist='history 1'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -117,7 +120,4 @@ bindkey ";5D" backward-word
 SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
-alias hist='history 0'
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
