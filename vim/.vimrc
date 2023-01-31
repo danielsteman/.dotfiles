@@ -100,3 +100,4 @@ augroup END
 
 " }}}
 
+set wrap
