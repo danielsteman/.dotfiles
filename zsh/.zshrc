@@ -81,7 +81,7 @@ alias cr='cargo run'
 alias python='python3'
 
 # java
-jcar() { javac $1.java && java $1 ; }
+jcar() { javac $1.java && java $1 "$@"; }
 
 # open shell in pod
 kshell() {
