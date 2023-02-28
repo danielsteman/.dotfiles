@@ -80,6 +80,9 @@ alias cr='cargo run'
 # python
 alias python='python3'
 
+# java
+jcar() { javac $1.java && java $1 ; }
+
 # open shell in pod
 kshell() {
 	k exec --stdin --tty $1 -- /bin/bash
