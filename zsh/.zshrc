@@ -119,6 +119,11 @@ function azgetrepo() {
   echo "$name"
 }
 
+# Utils
+killport(){ 
+  sudo kill -9 $(sudo fuser -n tcp $1 2> /dev/null);
+}
+
 # keybinds
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
