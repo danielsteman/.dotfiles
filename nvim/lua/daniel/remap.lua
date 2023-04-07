@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- remap to copy to clipboard

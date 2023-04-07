@@ -1,2 +1,2 @@
 require("daniel")
-require("daniel.packer")
+require("daniel.lazy")
