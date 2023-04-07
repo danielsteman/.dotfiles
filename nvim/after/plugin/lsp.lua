@@ -19,14 +19,14 @@ lsp.configure('lua_ls', {
     }
 })
 
-lsp.format_on_save({
-    servers = {
-        ['lua_ls'] = { 'lua' },
-        ['rust_analyzer'] = { 'rust' },
-        ['tsserver'] = { 'ts', 'tsx' },
-        ['black'] = { 'py' },
-    }
-})
+--lsp.format_on_save({
+--    servers = {
+--        ['lua_ls'] = { 'lua' },
+--        ['rust_analyzer'] = { 'rust' },
+--        ['tsserver'] = { 'ts', 'tsx' },
+--       ['black'] = { 'py' },
+--    }
+--})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
