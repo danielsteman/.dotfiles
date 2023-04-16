@@ -2,7 +2,6 @@ vim.g.mapleader = ' '
 vim.g.localleader = ' '
 
 require('lazy').setup({
-    'nvim-treesitter/playground',
     'theprimeagen/harpoon',
     'mbbill/undotree',
     'tpope/vim-fugitive',

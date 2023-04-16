@@ -1,6 +1,7 @@
 require 'nvim-treesitter.configs'.setup {
     'nvim-treesitter',
     config = function()
+        require('nvim-treesitter/playground')
         -- A list of parser names, or "all"
         ensure_installed = { "javascript", "typescript", "c", "lua", "rust" },
 
