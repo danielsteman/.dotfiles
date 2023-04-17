@@ -1,9 +1,0 @@
-{
-  'theprimeagen/harpoon',
-},
-{
-  'mbbill/undotree',
-},
-{
-  'tpope/vim-fugitive',
-},
