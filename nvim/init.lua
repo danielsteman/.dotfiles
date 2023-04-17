@@ -1,3 +1,6 @@
+vim.g.mapleader = ' '
+vim.g.localleader = ' '
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -10,5 +13,8 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+require("remap")
+require("set")
 
 require("lazy").setup("plugins")
