@@ -11,5 +11,5 @@ return {
       vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
       vim.keymap.set("n", "<C-d>", function() ui.nav_file(3) end)
       vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
-    end 
+    end
 }
