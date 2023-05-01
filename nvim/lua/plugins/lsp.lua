@@ -67,6 +67,7 @@ return {
 
             vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+            vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
 
         end)
 
