@@ -79,6 +79,7 @@ alias cr='cargo run'
 
 # python
 alias python='python3'
+alias prun='poetry run python'
 
 # java
 jcar() { javac $1.java && java $1 "$@"; }
