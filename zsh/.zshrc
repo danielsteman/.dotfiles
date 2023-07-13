@@ -81,6 +81,9 @@ alias cr='cargo run'
 alias python='python3'
 alias prun='poetry run python'
 
+# add install location of poetry to path
+export PATH="$HOME/.local/bin:$PATH"
+
 # java
 jcar() { javac $1.java && java $1 "$@"; }
 
