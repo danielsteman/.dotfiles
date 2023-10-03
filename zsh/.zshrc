@@ -81,6 +81,9 @@ alias cr='cargo run'
 alias python='python3'
 alias prun='poetry run python'
 
+# databricks
+alias d='databricks'
+
 # add install location of poetry to path
 export PATH="$HOME/.local/bin:$PATH"
 
