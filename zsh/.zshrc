@@ -84,6 +84,30 @@ alias prun='poetry run python'
 # databricks
 alias d='databricks'
 
+# databricks: start pipeline
+dsp() {
+    d pipelines start-update $1
+}
+
+# databricks get pipelines
+dgp() {
+    local pipeline_id
+    pipeline_id=$(d pipelines list-pipelines | jq -r '.[] | .name + "\t" + .pipeline_id' | xargs printf "%-40s %-40s\n" | fzf | awk -F ' +' '{print $2}')
+
+    operations=("start" "stop")
+    operation=$(echo "${operations[@]}" | tr ' ' '\n' | fzf)
+
+
+    if [ "$operation" == "start" ]; then
+        d pipelines start-update $pipeline_id
+    elif [ "$operation" == "stop" ]; then
+        d pipelines stop $pipeline_id
+    else
+        echo "Invalid operation selected."
+    fi
+}
+
+
 # add install location of poetry to path
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -139,3 +163,9 @@ SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/danielsteman/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

@@ -22,14 +22,6 @@ return {
         local lsp = require('lsp-zero')
         lsp.preset('recommended')
 
-        lsp.ensure_installed({
-            'tsserver',
-            'eslint',
-            'lua_ls',
-            'rust_analyzer',
-            'pyright',
-        })
-
         lsp.configure('lua_ls', {
             settings = {
                 Lua = {
@@ -58,7 +50,7 @@ return {
             ['<C-Space>'] = cmp.mapping.complete(),
         })
 
-        lsp.setup_nvim_cmp({
+        cmp.setup({
             mapping = cmp_mappings
         })
 
