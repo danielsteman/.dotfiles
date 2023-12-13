@@ -1,5 +1,6 @@
 return {
     'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
     dependencies = {
         -- LSP Support
         { 'neovim/nvim-lspconfig' },
@@ -20,26 +21,7 @@ return {
     },
     config = function()
         local lsp = require('lsp-zero')
-        lsp.preset('recommended')
-
-        lsp.configure('lua_ls', {
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { 'vim' }
-                    }
-                }
-            }
-        })
-
-        --lsp.format_on_save({
-        --    servers = {
-        --        ['lua_ls'] = { 'lua' },
-        --        ['rust_analyzer'] = { 'rust' },
-        --        ['tsserver'] = { 'ts', 'tsx' },
-        --       ['black'] = { 'py' },
-        --    }
-        --})
+        local mason = require("mason").setup()
 
         local cmp = require('cmp')
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -55,13 +37,15 @@ return {
         })
 
         lsp.on_attach(function(client, bufnr)
-            local opts = { buffer = bufnr, remap = false }
+            lsp_zero.default_keymaps({buffer = bufnr})
 
             vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
 
         end)
+
+        lsp.setup_servers({'tsserver', 'rust_analyzer', 'pyright'})
 
         lsp.setup()
     end
