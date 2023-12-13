@@ -107,6 +107,49 @@ dgp() {
     fi
 }
 
+# databricks get catalogs
+dgc() {
+    local catalogs
+    catalogs=()
+
+    local tables
+    tables=()
+
+    # Fetch all catalogs
+    while read -r catalog; do
+        catalogs+=("$catalog")
+    done < <(databricks catalogs list | awk '{print $1}' | tail -n +3)
+
+    # for catalog in "${catalogs[@]}"; do
+    #     echo "$catalog"
+    # done
+
+    for catalog in "${catalogs[@]}"; do
+        local schemas
+        schemas=()
+
+        # Fetch all schemas for the current catalog
+        while read -r schema; do
+            schemas+=("$schema")
+        done < <(databricks schemas list "$catalog" | awk '{print $1}' | tail -n +2)
+
+        for schema in "${schemas[@]}"; do
+
+            echo $schema
+
+            # Fetch tables for each schema in the current catalog
+            while read -r table; do
+                tables+=("$table")
+            done < <(databricks tables list "$(echo "$string" | cut -d'.' -f1)" "$(echo "$string" | cut -d'.' -f2-)")
+        done
+    done
+
+    # Do something with the collected tables
+    # Example: Print all tables
+    for table in "${tables[@]}"; do
+        echo "$table"
+    done
+}
 
 # add install location of poetry to path
 export PATH="$HOME/.local/bin:$PATH"
@@ -151,7 +194,7 @@ function azgetrepo() {
 }
 
 # Utils
-killport(){ 
+killport(){
   sudo kill -9 $(sudo fuser -n tcp $1 2> /dev/null);
 }
 
