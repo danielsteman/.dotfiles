@@ -63,7 +63,7 @@ input * {
 default_border pixel 2
 
 # Color scheme
-set $cl_high #009ddc
+set $cl_high #7da1c4
 set $cl_indi #d9d8d8
 set $cl_back #231f20
 set $cl_fore #d9d8d8
@@ -223,14 +223,17 @@ bindsym $mod+r mode "resize"
 bar {
     position top
 
+    font MesloLGS NF Regular 10
+
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     status_command while date +'%Y-%m-%d %H:%M:%S %p'; do sleep 1; done
 
     colors {
         statusline #ffffff
-        background #323232
+        background #000000
         inactive_workspace #32323200 #32323200 #5c5c5c
+        focused_workspace #000000 #000000 $cl_high
     }
 }
 
