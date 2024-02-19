@@ -233,8 +233,8 @@ bar {
     colors {
         statusline #ffffff
         background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
-        focused_workspace #000000 #000000 $cl_high
+        inactive_workspace $cl_back $cl_back #5c5c5c
+        focused_workspace $cl_high $cl_high #5c5c5c
     }
 }
 
