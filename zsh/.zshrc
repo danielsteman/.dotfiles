@@ -14,6 +14,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Poetry
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
 # show history from 1
 alias hist='history 1'
 
@@ -42,6 +46,7 @@ alias gc='git checkout'
 alias gsh='git stash'
 alias gshp='git stash pop'
 alias gmp='git merge production'
+alias gmm='git merge main'
 alias gmd='git merge development'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 
@@ -212,3 +217,4 @@ if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+autoload -Uz compinit && compinit
