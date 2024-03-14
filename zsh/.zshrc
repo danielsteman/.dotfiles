@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc..zsh
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -41,6 +41,9 @@ alias v="cv; av"
 
 # pip
 alias pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt"
+
+# pre-commit install
+alias pci="pre-commit install --install-hooks -t pre-commit -t commit-msg"
 
 # git
 alias gca='git add .&&git commit -m'
