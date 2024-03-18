@@ -42,6 +42,8 @@ alias pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt"
 alias pci="pre-commit install --install-hooks -t pre-commit -t commit-msg"
 
 # git
+alias gd='git diff'
+alias gs='git status'
 alias gca='git add .&&git commit -m'
 alias gpl='git pull'
 alias gph='git push'
