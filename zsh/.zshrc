@@ -19,6 +19,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
+# Deno
+export DENO_INSTALL="/Users/danielsteman/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # show history from 1
 alias hist='history 1'
 
