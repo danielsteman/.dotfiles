@@ -19,6 +19,14 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
+# the following to 
+# ~/.zprofile (for login shells)
+# and ~/.zshrc (for interactive shells) :
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Deno
 export DENO_INSTALL="/Users/danielsteman/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
