@@ -107,6 +107,16 @@ alias prun='poetry run python'
 # databricks
 alias d='databricks'
 
+# databricks create asset bundle from template
+bundleinit() {
+    local options="ml
+entity
+source"
+
+    local selected_template=$(echo "$options" | fzf)
+    databricks bundle init https://gitlab.com/b5087/data-platform/bundle-templates --template-dir "templates/$selected_template"
+}
+
 # databricks: start pipeline
 dsp() {
     d pipelines start-update $1
