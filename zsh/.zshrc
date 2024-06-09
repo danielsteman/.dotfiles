@@ -246,3 +246,5 @@ if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 autoload -Uz compinit && compinit
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
