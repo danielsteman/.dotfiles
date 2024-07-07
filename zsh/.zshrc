@@ -248,3 +248,5 @@ if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; t
 autoload -Uz compinit && compinit
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+. "$HOME/.cargo/env"
