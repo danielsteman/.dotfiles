@@ -1,12 +1,6 @@
 # opens iTerm2
-alt - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
-
-# Show system statistics
-fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
-fn + lalt - 2 : "${HOME}"/.config/yabai/scripts/show_mem.sh
-fn + lalt - 3 : "${HOME}"/.config/yabai/scripts/show_bat.sh
-fn + lalt - 4 : "${HOME}"/.config/yabai/scripts/show_disk.sh
-fn + lalt - 5 : "${HOME}"/.config/yabai/scripts/show_song.sh
+# cmd - return : "${HOME}"/.dotfiles/unix/macos/yabai/scripts/open_kitty.sh
+cmd - return : Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # Navigation
 alt - h : yabai -m window --focus west
