@@ -23,10 +23,6 @@ autoload -Uz compinit && compinit
 # ~/.zprofile (for login shells)
 # and ~/.zshrc (for interactive shells) :
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # Deno
 export DENO_INSTALL="/Users/danielsteman/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
@@ -239,14 +235,9 @@ SAVEHIST=10000
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/danielsteman/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/danielsteman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-autoload -Uz compinit && compinit
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-
 . "$HOME/.cargo/env"
+source "$HOME/.rye/env"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
