@@ -41,7 +41,7 @@ alias c='clear'
 alias cv="virtualenv venv"
 alias av=". venv/bin/activate"
 alias dv="deactivate"
-alias v="cv; av"
+alias v=". .venv/bin/activate&&which python3"
 
 # pip
 alias pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt"
@@ -241,3 +241,4 @@ source "$HOME/.rye/env"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
