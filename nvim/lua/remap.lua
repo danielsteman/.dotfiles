@@ -11,3 +11,5 @@ vim.keymap.set("v", "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>P", "\"+P")
 vim.keymap.set("v", "<leader>P", "\"+P")
 
+-- remap to run python script
+vim.keymap.set('n', '<F4>', ":w <bar> exec '!python3 '.shellescape('%')<CR>")
