@@ -35,9 +35,8 @@ alias c='clear'
 
 # virtual env
 alias cv="virtualenv venv"
-alias av=". venv/bin/activate"
+alias av=". venv/bin/activate&&which python3"
 alias dv="deactivate"
-alias v=". .venv/bin/activate&&which python3"
 
 # pip
 alias pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt"
@@ -88,6 +87,7 @@ alias tf='terraform'
 
 # neovim
 alias vim='nvim'
+alias v='nvim .'
 
 # rust
 alias cr='cargo run'
