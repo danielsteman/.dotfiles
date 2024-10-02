@@ -3,7 +3,7 @@ local config = {}
 
 -- Load keys config
 local cfg_keys = require 'keys'
-config.keys = cfg_keys.keys
+config.keys = cfg_keys
 
 config.color_scheme = "Catppuccin Mocha"
 config.tab_bar_at_bottom = true
@@ -17,5 +17,8 @@ config.macos_window_background_blur = 20
 config.colors = {
     background = "#000000", 
 }
+
+-- Scrollback
+config.scrollback_lines = 3500
 
 return config
