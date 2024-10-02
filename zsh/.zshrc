@@ -35,7 +35,7 @@ alias c='clear'
 
 # virtual env
 alias cv="virtualenv venv"
-alias av=". venv/bin/activate&&which python3"
+alias av=". .venv/bin/activate&&which python3"
 alias dv="deactivate"
 
 # pip
