@@ -18,6 +18,9 @@ return {
         -- Snippets
         { 'L3MON4D3/LuaSnip' },
         { 'rafamadriz/friendly-snippets' },
+
+        -- Formatting
+        { 'jose-elias-alvarez/null-ls.nvim' }
     },
     config = function()
         local lsp = require('lsp-zero')
@@ -43,7 +46,26 @@ return {
             vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, opts)
 
+            if client.supports_method("textDocument/formatting") then
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    buffer = bufnr,
+                    callback = function()
+                        vim.lsp.buf.format({ bufnr = bufnr })
+                    end,
+                })
+            end
         end)
+
+        local null_ls = require("null-ls")
+        null_ls.setup({
+            sources = {
+                null_ls.builtins.formatting.black.with({
+                    extra_args = { "--fast" },
+                }),
+                null_ls.builtins.formatting.prettier,  
+                null_ls.builtins.formatting.stylua,
+            },
+        })
 
         lsp.setup_servers({'ts_ls', 'rust_analyzer', 'pyright'})
 
