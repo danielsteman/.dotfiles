@@ -1,6 +1,5 @@
-# opens WezTerm
-# cmd - return : "${HOME}"/.dotfiles/unix/macos/yabai/scripts/open_kitty.sh
-cmd - return : Applications/WezTerm.app/Contents/MacOS/wezterm 
+# opens Kitty
+cmd - return : Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # Navigation
 alt - h : yabai -m window --focus west
