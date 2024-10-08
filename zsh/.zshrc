@@ -223,6 +223,12 @@ killport(){
   sudo kill -9 $(sudo fuser -n tcp $1 2> /dev/null);
 }
 
+ccd() {
+  local repo
+  repo=$(ls ~/repos | fzf)
+  code ~/repos/$repo
+}
+
 # keybinds
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
