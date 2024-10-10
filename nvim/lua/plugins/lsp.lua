@@ -74,6 +74,7 @@ return {
 		})
 
 		local nvim_lsp = require("lspconfig")
+
 		nvim_lsp.denols.setup({
 			on_attach = on_attach,
 			root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
@@ -83,6 +84,16 @@ return {
 			on_attach = on_attach,
 			root_dir = nvim_lsp.util.root_pattern("package.json"),
 			single_file_support = false,
+		})
+
+		nvim_lsp.rust_analyzer.setup({
+			settings = {
+				["rust-analyzer"] = {
+					diagnostics = {
+						disabled = { "unresolved-proc-macro" },
+					},
+				},
+			},
 		})
 
 		lsp.setup_servers({ "ts_ls", "rust_analyzer", "pyright" })
