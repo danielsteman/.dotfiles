@@ -58,6 +58,8 @@ shift + lctrl - up : yabai -m display --focus north
 shift + lctrl - down : yabai -m display --focus south
 shift + lctrl - right : yabai -m display --focus east
 
+alt + shift - d : yabai -m window --display next 
+
 # Float / Unfloat window
 shift + alt - space : \
     yabai -m window --toggle float; \
