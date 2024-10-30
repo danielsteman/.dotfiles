@@ -58,6 +58,7 @@ alias gmp='git merge production'
 alias gmm='git merge main'
 alias gmd='git merge development'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
+alias cdg='cd "$(git rev-parse --show-toplevel || echo .)"'
 
 # kubectl
 alias k='kubectl'
