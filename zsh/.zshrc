@@ -46,7 +46,6 @@ alias pci="pre-commit install --install-hooks -t pre-commit -t commit-msg"
 # git
 alias gd='git diff'
 alias gs='git status'
-alias gca='git add .&&git commit -m'
 alias gpl='git pull'
 alias gph='git push'
 alias gcp='git checkout production'
@@ -58,6 +57,14 @@ alias gmm='git merge main'
 alias gmd='git merge development'
 alias grmc='gcp&&gpl&&gc -&&gmp&&gph'
 alias cdg='cd "$(git rev-parse --show-toplevel || echo .)"'
+
+gca() {
+  orig_dir="$(pwd)"
+  cd "$(git rev-parse --show-toplevel 2>/dev/null || echo .)" || return
+  git add .
+  git commit -m "$1"
+  cd "$orig_dir" || return
+}
 
 # kubectl
 alias k='kubectl'
