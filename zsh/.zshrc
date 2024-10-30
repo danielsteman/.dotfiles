@@ -34,8 +34,7 @@ alias lt='ls --human-readable --size -1 -S --classify'
 alias c='clear'
 
 # virtual env
-alias cv="virtualenv venv"
-alias av=". .venv/bin/activate&&which python3"
+alias av='cd "$(git rev-parse --show-toplevel 2>/dev/null || echo .)" && . .venv/bin/activate && which python3'
 alias dv="deactivate"
 
 # pip
