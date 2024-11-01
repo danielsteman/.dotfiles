@@ -66,6 +66,16 @@ gca() {
   cd "$orig_dir" || return
 }
 
+# expose .env, hence: ee
+ee() {
+  if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+    echo "yeeted .env in env"
+  else
+    echo ".env not found in this dir"
+  fi
+}
+
 # kubectl
 alias k='kubectl'
 alias kd='kubectl describe pods'
