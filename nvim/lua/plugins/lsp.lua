@@ -98,7 +98,7 @@ return {
 			},
 		})
 
-		lsp.setup_servers({ "ts_ls", "rust_analyzer", "pyright" })
+		lsp.setup_servers({ "ts_ls", "rust_analyzer", "pyright", "gopls" })
 
 		lsp.setup()
 	end,
