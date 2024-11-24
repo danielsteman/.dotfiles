@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc..zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -65,6 +65,12 @@ gca() {
   git add .
   git commit -m "$1"
   cd "$orig_dir" || return
+}
+
+# git utils
+
+gt() {
+  git ls-files | awk '{print "./" $0}' | tree --fromfile
 }
 
 # expose .env, hence: ee
