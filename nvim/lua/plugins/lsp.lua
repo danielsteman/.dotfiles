@@ -77,16 +77,11 @@ return {
 
 		local nvim_lsp = require("lspconfig")
 
-		-- nvim_lsp.denols.setup({
+		-- nvim_lsp.ts_ls.setup({
 		-- 	on_attach = on_attach,
-		-- 	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+		-- 	root_dir = nvim_lsp.util.root_pattern("package.json"),
+		-- 	single_file_support = false,
 		-- })
-
-		nvim_lsp.ts_ls.setup({
-			on_attach = on_attach,
-			root_dir = nvim_lsp.util.root_pattern("package.json"),
-			single_file_support = false,
-		})
 
 		nvim_lsp.rust_analyzer.setup({
 			settings = {
@@ -98,7 +93,8 @@ return {
 			},
 		})
 
-		lsp.setup_servers({ "ts_ls", "rust_analyzer", "pyright", "gopls" })
+		-- lsp.setup_servers({ "ts_ls", "rust_analyzer", "pyright", "gopls" })
+		lsp.setup_servers({ "rust_analyzer", "pyright", "gopls" })
 
 		lsp.setup()
 	end,
