@@ -60,7 +60,7 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 
-alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-1 = 'move-node-to-workspace 1' 
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
 alt-shift-4 = 'move-node-to-workspace 4'
@@ -74,6 +74,10 @@ alt-shift-c = 'reload-config'
 
 alt-r = 'mode resize'
 
+# Change focus to next or previous monitor
+ctrl-shift-right = 'focus-monitor --wrap-around next'
+ctrl-shift-left = 'focus-monitor --wrap-around prev'
+
 [workspace-to-monitor-force-assignment]
 10 = 'secondary'
 
@@ -85,12 +89,12 @@ l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
 
-# Run Sketchybar together with AeroSpace
-# sketchbar has a built-in detection of already running process,
-# so it won't be run twice on AeroSpace restart
-after-startup-command = ['exec-and-forget sketchybar']
-
-# Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
+# # Run Sketchybar together with AeroSpace
+# # sketchbar has a built-in detection of already running process,
+# # so it won't be run twice on AeroSpace restart
+# after-startup-command = ['exec-and-forget sketchybar']
+#
+# # Notify Sketchybar about workspace change
+# exec-on-workspace-change = ['/bin/bash', '-c',
+#     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+# ]
