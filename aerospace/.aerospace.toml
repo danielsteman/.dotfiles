@@ -11,7 +11,7 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
-alt-enter = '''exec-and-forget open -b "net.kovidgoyal.kitty"'''
+alt-enter = '''exec-and-forget open -n kitty'''
 
 # i3 wraps focus by default
 alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
