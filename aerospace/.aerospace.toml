@@ -11,13 +11,7 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
-# See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-alt-enter = '''exec-and-forget osascript -e '
-tell application "Terminal"
-    do script
-    activate
-end tell'
-'''
+alt-enter = '''exec-and-forget open -b "net.kovidgoyal.kitty"'''
 
 # i3 wraps focus by default
 alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
@@ -78,6 +72,9 @@ alt-r = 'mode resize'
 ctrl-shift-right = 'focus-monitor --wrap-around next'
 ctrl-shift-left = 'focus-monitor --wrap-around prev'
 
+# Move workspace to adjacent monitor
+alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
 [workspace-to-monitor-force-assignment]
 10 = 'secondary'
 
@@ -98,3 +95,17 @@ esc = 'mode main'
 # exec-on-workspace-change = ['/bin/bash', '-c',
 #     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 # ]
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 3'
+
+
