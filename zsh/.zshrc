@@ -302,6 +302,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # go
 export PATH=$PATH:$HOME/go/bin
-
-
 [[ -s "/Users/danielsteman/.gvm/scripts/gvm" ]] && source "/Users/danielsteman/.gvm/scripts/gvm"
+
+# docker
+export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
