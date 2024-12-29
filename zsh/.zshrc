@@ -123,6 +123,7 @@ alias prun='poetry run python'
 # databricks
 alias d='databricks'
 alias dpd='databricks bundle deploy'
+alias dpv='databricks bundle validate'
 
 # databricks create asset bundle from template
 bundleinit() {
