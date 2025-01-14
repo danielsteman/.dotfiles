@@ -307,3 +307,14 @@ export PATH=$PATH:$HOME/go/bin
 
 # docker
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+
+# set kitty tab name to repo name
+
+function set_tab_name {
+    if git_repo=$(git rev-parse --show-toplevel 2>/dev/null); then
+        printf "\033]2;%s\007" "$(basename "$git_repo")"
+    else
+        printf "\033]2;%s\007" "$(basename "$PWD")"
+    fi
+}
+precmd() { set_tab_name }
