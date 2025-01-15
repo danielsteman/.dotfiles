@@ -317,4 +317,6 @@ function set_tab_name {
         printf "\033]2;%s\007" "$(basename "$PWD")"
     fi
 }
+
+chpwd() { set_tab_name }
 precmd() { set_tab_name }
