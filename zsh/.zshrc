@@ -44,13 +44,29 @@ alias pi="pip install -r requirements.txt&&pip install -r requirements-dev.txt"
 alias pci="pre-commit install --install-hooks -t pre-commit -t commit-msg"
 
 # git
+
+git_select_branch() {
+    # Sort git branches by committer date and checkout selected branch
+    branch=$(git branch --sort=-committerdate | fzf)
+    # If a branch was selected, attempt to checkout
+    if [ -n "$branch" ]; then
+        if git checkout $(echo "$branch" | sed 's/^..//'); then
+            echo ":white_check_mark: Successfully checked out branch: $(git rev-parse --abbrev-ref HEAD)"
+        else
+            echo ":x: Failed to checkout branch: $branch"
+        fi
+    else
+        echo ":x: No branch selected."
+    fi
+}
+
 alias ga='git add . && echo "All changes in cwd are staged ✨"'
 alias gd='git diff'
 alias gs='git status'
 alias gpl='git pull'
 alias gph='git push'
 alias gcp='git checkout production'
-alias gc='git checkout'
+alias gc=git_select_branch
 alias gsh='git stash'
 alias gshp='git stash pop'
 alias gmp='git merge production'
