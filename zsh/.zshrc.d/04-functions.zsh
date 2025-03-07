@@ -17,7 +17,9 @@ ccd() {
 # Load .env as environment variables
 ee() {
   if [ -f .env ]; then
-    export "$(grep -v '^#' .env | xargs)"
+    set -a              # automatically export all variables
+    source .env         # source the file in the current shell
+    set +a              # stop exporting automatically
     echo "yeeted .env in env"
   else
     echo ".env not found in this dir"

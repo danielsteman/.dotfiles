@@ -55,3 +55,8 @@ alias prun='poetry run python'
 # Docker (for a quick BusyBox shell in a running pod – see k8s aliases)
 alias busyshell='k exec -it busybox -- /bin/sh'
 
+# Kubernetes
+alias k='kubectl'
+alias kgp='k get pods'
+alias kgs='k get service'
+alias kd='k describe'
