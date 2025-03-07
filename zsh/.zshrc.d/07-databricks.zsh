@@ -85,3 +85,4 @@ dgc() {
     done
 }
 
+alias d="databricks"
