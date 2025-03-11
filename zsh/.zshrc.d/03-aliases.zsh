@@ -60,3 +60,6 @@ alias k='kubectl'
 alias kgp='k get pods'
 alias kgs='k get service'
 alias kd='k describe'
+
+# Databricks
+alias dbd='databricks bundle deploy'
