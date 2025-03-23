@@ -35,9 +35,5 @@ function set_tab_name {
     fi
 }
 
-# Called when you change directories
-chpwd() { set_tab_name }
-
-# Called before each prompt
-precmd() { set_tab_name }
-
+add-zsh-hook chpwd set_tab_name
+add-zsh-hook precmd set_tab_name
