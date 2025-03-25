@@ -20,7 +20,7 @@ sketchybar --bar position=top height=30 blur_radius=30 color=0x40000000
 default=(
   padding_left=5
   padding_right=5
-  icon.font="Hack Nerd Font:Bold:17.0"
+  icon.font="Hack Nerd Font:Bold:15.0"
   label.font="SF Pro:Semibold:17.0"
   icon.color=0xffffffff
   label.color=0xffffffff
@@ -83,7 +83,7 @@ for sid in $(aerospace list-workspaces --monitor 1 --empty no); do
 done
 
 sketchybar --add item space_separator left \
-  --set space_separator icon="🦀" \
+  --set space_separator icon="✨" \
   icon.padding_left=4 \
   label.drawing=off \
   background.drawing=off \
