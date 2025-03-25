@@ -212,7 +212,7 @@ function icon_map() {
     icon_result=":finder:"
     ;;
   "Firefox")
-    icon_result=":firefox:"
+    icon_result="🦊"
     ;;
   "Firefox Developer Edition" | "Firefox Nightly")
     icon_result=":firefox_developer_edition:"
@@ -302,7 +302,7 @@ function icon_map() {
     icon_result=":keynote:"
     ;;
   "kitty")
-    icon_result=":kitty:"
+    icon_result="🐱"
     ;;
   "League of Legends")
     icon_result=":league_of_legends:"
@@ -578,13 +578,13 @@ function icon_map() {
     icon_result=":skype:"
     ;;
   "Slack")
-    icon_result=":slack:"
+    icon_result="💬"
     ;;
   "Spark Desktop")
     icon_result=":spark:"
     ;;
   "Spotify")
-    icon_result=":spotify:"
+    icon_result="🎧"
     ;;
   "Spotlight")
     icon_result=":spotlight:"
@@ -680,7 +680,7 @@ function icon_map() {
     icon_result=":wezterm:"
     ;;
   "WhatsApp" | "‎WhatsApp")
-    icon_result=":whats_app:"
+    icon_result="🟢"
     ;;
   "Xcode")
     icon_result=":xcode:"
