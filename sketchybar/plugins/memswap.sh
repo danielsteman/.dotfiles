@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEFCOLOR="0x44FFFFFF"
+DEFCOLOR="0xffffffff"
 ALERTCOLOR="0xAAFF0000"
 MEM_USED=$(vm_stat | awk -F ':[ ]*' '
   /Pages active/ {active=$2}
