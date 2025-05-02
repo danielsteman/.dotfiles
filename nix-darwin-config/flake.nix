@@ -16,7 +16,7 @@
         [ pkgs.vim
         ];
 
-      nix.enable = false
+      nix.enable = false;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -33,6 +33,9 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+      
+      # Unlock sudo commands with our fingerprint.
+      security.pam.services.sudo_local.touchIdAuth = true;
     };
   in
   {
