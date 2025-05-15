@@ -12,11 +12,14 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages =
-        [ 
-          pkgs.vim
-          pkgs.neovim
-        ];
+      environment.systemPackages = with pkgs; [ 
+        vim
+        neovim
+        kitty
+        aerospace
+        sketchybar
+        firefox
+      ];
 
       nix.enable = false;
 
