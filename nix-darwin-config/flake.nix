@@ -34,6 +34,7 @@
         prettierd
         cue
         aws-sam-cli
+        neofetch
       ];
 
       nix.enable = false;
