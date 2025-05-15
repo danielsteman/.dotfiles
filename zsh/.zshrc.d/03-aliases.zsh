@@ -63,3 +63,6 @@ alias kd='k describe'
 
 # Databricks
 alias dbd='databricks bundle deploy'
+
+# Nix
+alias dsw='nix run nix-darwin -- switch --flake .'
