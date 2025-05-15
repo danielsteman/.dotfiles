@@ -19,6 +19,21 @@
         aerospace
         sketchybar
         firefox
+        commitizen
+        go
+        rustc
+        rustup
+        rustfmt
+        lua
+        yq
+        jq
+        sqlite
+        python313
+        nodejs_23
+        typescript
+        prettierd
+        cue
+        aws-sam-cli
       ];
 
       nix.enable = false;
