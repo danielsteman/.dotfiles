@@ -35,6 +35,7 @@
         cue
         aws-sam-cli
         neofetch
+        cmatrix
       ];
 
       nix.enable = false;
