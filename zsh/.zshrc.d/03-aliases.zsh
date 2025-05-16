@@ -66,3 +66,6 @@ alias dbd='databricks bundle deploy'
 
 # Nix
 alias dsw='nix run nix-darwin -- switch --flake .'
+
+# macOS
+alias lock='open /System/Library/CoreServices/ScreenSaverEngine.app'
