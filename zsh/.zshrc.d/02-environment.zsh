@@ -2,9 +2,6 @@
 # -------------------------------------------------------------
 # General environment variables, PATH changes, shellenv, etc.
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Poetry completions
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit

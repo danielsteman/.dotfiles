@@ -36,7 +36,8 @@
         aws-sam-cli
         neofetch
         cmatrix
-	tree
+      	tree
+        pyenv
       ];
 
       nix.enable = false;
