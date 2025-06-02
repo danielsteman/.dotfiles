@@ -38,6 +38,7 @@
         cmatrix
       	tree
         pyenv
+        yarn
       ];
 
       nix.enable = false;
