@@ -12,7 +12,7 @@
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
-      environment.systemPackages = with pkgs; [ 
+      environment.systemPackages = with pkgs; [
         vim
         neovim
         kitty
@@ -39,6 +39,7 @@
       	tree
         pyenv
         yarn
+        pgadmin4
       ];
 
       nix.enable = false;
@@ -58,7 +59,7 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
-      
+
       # Unlock sudo commands with our fingerprint.
       security.pam.services.sudo_local.touchIdAuth = true;
     };
