@@ -10,6 +10,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
+      nixpkgs.config.allowUnfree = true;
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
@@ -40,6 +41,8 @@
         yarn
         pgadmin4
         xz
+        nerd-fonts.hack
+        vscode
       ];
 
       nix.enable = false;

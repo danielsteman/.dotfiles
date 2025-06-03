@@ -12,6 +12,20 @@ ZSHRCD_LINK := $(HOME)/.zshrc.d
 NVIM_SOURCE := $(HOME)/.dotfiles/nvim
 NVIM_LINK   := $(HOME)/.config/nvim
 
+# AeroSpace config
+AEROSPACE_SOURCE := $(HOME)/.dotfiles/aerospace/default-config.toml
+AEROSPACE_LINK   := $(HOME)/.aerospace.toml
+
+# Check if XDG_CONFIG_HOME is set
+XDG_CONFIG_HOME := $(shell echo $$XDG_CONFIG_HOME)
+
+# Determine where to link aerospace.toml
+ifeq ($(XDG_CONFIG_HOME),)
+  AEROSPACE_LINK := $(HOME)/.config/aerospace/aerospace.toml
+else
+  AEROSPACE_LINK := $(XDG_CONFIG_HOME)/aerospace/aerospace.toml
+endif
+
 .PHONY: install
 install:
 	@echo "Installing Zsh config from '$(ZSH_DIR)'..."
@@ -39,4 +53,15 @@ install:
 	ln -s $(NVIM_SOURCE) $(NVIM_LINK)
 	@echo "Neovim symlink created:"
 	@echo "  $(NVIM_LINK) -> $(NVIM_SOURCE)"
+
+	@echo "Installing AeroSpace config from '$(AEROSPACE_SOURCE)'..."
+
+	# Remove existing aerospace.toml or link
+	rm -f $(AEROSPACE_LINK)
+
+	# Create new symlink for AeroSpace config
+	mkdir -p $(dir $(AEROSPACE_LINK))
+	ln -s $(AEROSPACE_SOURCE) $(AEROSPACE_LINK)
+	@echo "AeroSpace symlink created:"
+	@echo "  $(AEROSPACE_LINK) -> $(AEROSPACE_SOURCE)"
 
