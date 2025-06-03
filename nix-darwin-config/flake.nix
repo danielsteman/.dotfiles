@@ -28,7 +28,6 @@
         yq
         jq
         sqlite
-        python313
         nodejs_23
         typescript
         prettierd
@@ -40,6 +39,7 @@
         pyenv
         yarn
         pgadmin4
+        xz
       ];
 
       nix.enable = false;
