@@ -62,6 +62,8 @@
 
       # Unlock sudo commands with our fingerprint.
       security.pam.services.sudo_local.touchIdAuth = true;
+
+      system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
     };
   in
   {
