@@ -58,10 +58,9 @@
 
       # Fonts stuff
       fonts.packages = [
-          pkgs.nerd-fonts.JetBrainsMono
-          pkgs.nerd-fonts.Meslo
-       ]
-      fonts.packages = [ pkgs.nerdfonts ];
+          pkgs.nerd-fonts.jetbrains-mono
+          pkgs.nerd-fonts.meslo-lg
+      ];
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
