@@ -43,6 +43,8 @@
         xz
         nerd-fonts.hack
         vscode
+        raycast
+        slack
       ];
 
       nix.enable = false;
@@ -52,6 +54,14 @@
 
       # Enable alternative shell support in nix-darwin.
       programs.zsh.enable = true;
+      environment.shells = [ pkgs.bash pkgs.zsh ];
+
+      # Fonts stuff
+      fonts.packages = [
+          pkgs.nerd-fonts.JetBrainsMono
+          pkgs.nerd-fonts.Meslo
+       ]
+      fonts.packages = [ pkgs.nerdfonts ];
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
