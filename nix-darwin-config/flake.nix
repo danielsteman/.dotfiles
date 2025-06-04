@@ -44,7 +44,7 @@
         nerd-fonts.hack
         vscode
         raycast
-        slack
+        spotify
       ];
 
       nix.enable = false;
@@ -75,13 +75,18 @@
       # Unlock sudo commands with our fingerprint.
       security.pam.services.sudo_local.touchIdAuth = true;
 
+      system.defaults = {
+        trackpad.Clicking = true;
+        dock.autohide = true;
+      };
+
       system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
     };
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations."localhost" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."danielsteman" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
     };
   };

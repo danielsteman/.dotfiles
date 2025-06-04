@@ -13,8 +13,13 @@ NVIM_SOURCE := $(HOME)/.dotfiles/nvim
 NVIM_LINK   := $(HOME)/.config/nvim
 
 # AeroSpace config
-AEROSPACE_SOURCE := $(HOME)/.dotfiles/aerospace/default-config.toml
+AEROSPACE_SOURCE := $(HOME)/.dotfiles/aerospace/.aerospace.toml
 AEROSPACE_LINK   := $(HOME)/.aerospace.toml
+
+# Kitty config
+KITTY_SOURCE := $(HOME)/.dotfiles/kitty
+KITTY_CONF_LINK := $(HOME)/.config/kitty/kitty.conf
+KITTY_SSH_CONF_LINK := $(HOME)/.config/kitty/ssh.conf
 
 # Check if XDG_CONFIG_HOME is set
 XDG_CONFIG_HOME := $(shell echo $$XDG_CONFIG_HOME)
@@ -64,4 +69,20 @@ install:
 	ln -s $(AEROSPACE_SOURCE) $(AEROSPACE_LINK)
 	@echo "AeroSpace symlink created:"
 	@echo "  $(AEROSPACE_LINK) -> $(AEROSPACE_SOURCE)"
+
+	@echo "Installing Kitty config from '$(KITTY_SOURCE)'..."
+
+	# Remove existing kitty.conf or link
+	rm -f $(KITTY_CONF_LINK)
+
+	# Remove existing ssh.conf or link
+	rm -f $(KITTY_SSH_CONF_LINK)
+
+	# Create new symlinks for Kitty config
+	mkdir -p $(HOME)/.config/kitty
+	ln -s $(KITTY_SOURCE)/kitty.conf $(KITTY_CONF_LINK)
+	ln -s $(KITTY_SOURCE)/ssh.conf $(KITTY_SSH_CONF_LINK)
+	@echo "Kitty symlinks created:"
+	@echo "  $(KITTY_CONF_LINK) -> $(KITTY_SOURCE)/kitty.conf"
+	@echo "  $(KITTY_SSH_CONF_LINK) -> $(KITTY_SOURCE)/ssh.conf"
 

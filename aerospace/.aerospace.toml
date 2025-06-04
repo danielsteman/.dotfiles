@@ -100,13 +100,12 @@ l = 'resize width +50'
 enter = 'mode main'
 esc = 'mode main'
 
-
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'org.mozilla.firefox'
+if.app-id = 'org.nixos.firefox'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
@@ -116,6 +115,10 @@ run = 'move-node-to-workspace 3'
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
