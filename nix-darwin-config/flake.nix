@@ -29,7 +29,6 @@
         yq
         jq
         sqlite
-        nodejs_23
         typescript
         prettierd
         cue
@@ -45,12 +44,16 @@
         vscode
         raycast
         spotify
+        pipenv
       ];
 
       nix.enable = false;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+
+      # Set primary user
+      system.primaryUser = "danielsteman";
 
       # Enable alternative shell support in nix-darwin.
       programs.zsh.enable = true;
