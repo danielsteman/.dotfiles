@@ -109,15 +109,15 @@ if.app-id = 'org.nixos.firefox'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
+if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-if.app-id = 'com.spotify.client'
+if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
