@@ -45,6 +45,8 @@
         raycast
         spotify
         pipenv
+        docker
+        colima
       ];
 
       nix.enable = false;
