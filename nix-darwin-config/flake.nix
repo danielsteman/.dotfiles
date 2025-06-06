@@ -47,6 +47,7 @@
         pipenv
         docker
         colima
+        code-cursor
       ];
 
       nix.enable = false;
