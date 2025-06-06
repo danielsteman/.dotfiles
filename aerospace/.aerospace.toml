@@ -109,7 +109,7 @@ if.app-id = 'org.nixos.firefox'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
+if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
