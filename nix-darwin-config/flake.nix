@@ -48,6 +48,7 @@
         docker
         colima
         code-cursor
+        uv
       ];
 
       nix.enable = false;
