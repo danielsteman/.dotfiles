@@ -49,6 +49,7 @@
         colima
         code-cursor
         uv
+        awscli2
       ];
 
       nix.enable = false;
