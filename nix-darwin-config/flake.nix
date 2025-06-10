@@ -50,6 +50,7 @@
         code-cursor
         uv
         awscli2
+        terraform
       ];
 
       nix.enable = false;
