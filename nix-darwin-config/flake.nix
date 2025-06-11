@@ -87,6 +87,12 @@
         trackpad.Clicking = true;
         dock.autohide = true;
         screencapture.target = "clipboard";
+
+        finder = {
+          AppleShowAllExtensions = true;
+          ShowPathbar = true;
+          FXEnableExtensionChangeWarning = false;
+        };
       };
 
       system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
