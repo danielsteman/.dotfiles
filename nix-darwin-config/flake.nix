@@ -41,7 +41,6 @@
         pgadmin4
         xz
         nerd-fonts.hack
-        vscode
         raycast
         spotify
         pipenv
@@ -87,6 +86,7 @@
       system.defaults = {
         trackpad.Clicking = true;
         dock.autohide = true;
+        screencapture.target = "clipboard";
       };
 
       system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
