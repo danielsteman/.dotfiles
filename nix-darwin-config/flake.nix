@@ -30,6 +30,7 @@
         docker
         firefox
         go
+        jira-cli-go
         jq
         kitty
         lua
