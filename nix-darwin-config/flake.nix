@@ -1,5 +1,5 @@
 {
-  description = "Example nix-darwin system flake";
+  description = "My configuration for macOS";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
