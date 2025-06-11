@@ -14,42 +14,42 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
-        vim
-        neovim
-        kitty
         aerospace
-        sketchybar
-        firefox
-        commitizen
-        go
-        rustc
-        rustup
-        rustfmt
-        lua
-        yq
-        jq
-        sqlite
-        typescript
-        prettierd
-        cue
         aws-sam-cli
-        neofetch
-        cmatrix
-      	tree
-        pyenv
-        yarn
-        pgadmin4
-        xz
-        nerd-fonts.hack
-        raycast
-        spotify
-        pipenv
-        docker
-        colima
-        code-cursor
-        uv
         awscli2
+        code-cursor
+        colima
+        commitizen
+        cmatrix
+        cue
+        docker
+        firefox
+        go
+        jq
+        kitty
+        lua
+        neofetch
+        neovim
+        nerd-fonts.hack
+        pgadmin4
+        pipenv
+        prettierd
+        pyenv
+        raycast
+        rustc
+        rustfmt
+        rustup
+        sketchybar
+        spotify
+        sqlite
         terraform
+        tree
+        typescript
+        uv
+        vim
+        xz
+        yarn
+        yq
       ];
 
       nix.enable = false;
