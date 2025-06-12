@@ -11,7 +11,7 @@ killport(){
 ccd() {
   local repo
   repo=$(ls ~/repos | fzf)
-  [ -n "$repo" ] && code "$HOME/repos/$repo"
+  [ -n "$repo" ] && cursor "$HOME/repos/$repo"
 }
 
 # Load .env as environment variables
