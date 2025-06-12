@@ -29,6 +29,7 @@
         cue
         docker
         firefox
+        gh
         go
         jira-cli-go
         jq
