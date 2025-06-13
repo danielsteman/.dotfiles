@@ -31,6 +31,7 @@
         firefox
         fzf
         gh
+        gnupg
         go
         jira-cli-go
         jq
