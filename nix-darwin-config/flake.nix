@@ -43,6 +43,7 @@
         pgadmin4
         pipenv
         poetry
+        pre-commit
         prettierd
         pyenv
         raycast
