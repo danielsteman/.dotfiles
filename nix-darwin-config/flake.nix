@@ -46,6 +46,7 @@
         pre-commit
         prettierd
         pyenv
+        pyright
         raycast
         rustc
         rustfmt
