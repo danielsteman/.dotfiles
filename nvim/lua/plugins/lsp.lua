@@ -20,7 +20,7 @@ return {
 		{ "rafamadriz/friendly-snippets" },
 
 		-- Formatting
-		{ "jose-elias-alvarez/null-ls.nvim" },
+		{ "mfussenegger/nvim-lint" },
 	},
 	config = function()
 		local lsp = require("lsp-zero")
@@ -62,26 +62,13 @@ return {
 			end
 		end)
 
-		local null_ls = require("null-ls")
+		local nvim_lint = require("lint")
 
-		null_ls.setup({
-			sources = {
-				null_ls.builtins.formatting.black.with({
-					extra_args = { "--fast" },
-					filetypes = { "python" },
-				}),
-				null_ls.builtins.formatting.prettier,
-				null_ls.builtins.formatting.stylua,
-			},
-		})
+        nvim_lint.linters_by_ft = {
+            ["*"] = { "prettier" },
+        }
 
 		local nvim_lsp = require("lspconfig")
-
-		-- nvim_lsp.ts_ls.setup({
-		-- 	on_attach = on_attach,
-		-- 	root_dir = nvim_lsp.util.root_pattern("package.json"),
-		-- 	single_file_support = false,
-		-- })
 
 		nvim_lsp.rust_analyzer.setup({
 			settings = {
@@ -93,7 +80,6 @@ return {
 			},
 		})
 
-		-- lsp.setup_servers({ "ts_ls", "rust_analyzer", "pyright", "gopls" })
 		lsp.setup_servers({ "rust_analyzer", "pyright", "gopls" })
 
 		lsp.setup()
