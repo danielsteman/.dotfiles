@@ -106,6 +106,8 @@
         };
       };
 
+      system.keyboard.enableKeyMapping = true;
+
       system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
     };
   in
