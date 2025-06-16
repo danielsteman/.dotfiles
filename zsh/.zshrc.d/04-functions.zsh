@@ -17,12 +17,17 @@ ccd() {
 # Load .env as environment variables
 ee() {
   if [ -f .env ]; then
-    set -a              # automatically export all variables
-    source .env         # source the file in the current shell
-    set +a              # stop exporting automatically
+    set -a
+    source .env
+    set +a
     echo "yeeted .env in env"
+  elif [ -f .env.dev ]; then
+    set -a
+    source .env.dev
+    set +a
+    echo "yeeted .env.dev in env"
   else
-    echo ".env not found in this dir"
+    echo "No .env or .env.dev found in this dir"
   fi
 }
 
