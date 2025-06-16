@@ -42,6 +42,7 @@
         nerd-fonts.hack
         pgadmin4
         pipenv
+        poetry
         prettierd
         pyenv
         raycast
