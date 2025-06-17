@@ -59,6 +59,7 @@
         typescript
         uv
         vim
+        websocat
         xz
         yarn
         yq
