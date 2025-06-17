@@ -8,3 +8,6 @@ cd .dotfiles
 make install
 ```
 
+## Scroll reverser
+
+Couldn't find [this](https://pilotmoon.com/scrollreverser/) in nixpkgs.
