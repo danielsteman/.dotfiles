@@ -42,7 +42,7 @@
         nerd-fonts.hack
         pgadmin4
         pipenv
-        poetry
+        (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
         pre-commit
         prettierd
         pyenv
