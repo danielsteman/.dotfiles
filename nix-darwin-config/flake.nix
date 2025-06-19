@@ -37,6 +37,7 @@
         jq
         kitty
         lua
+        localstack
         neofetch
         neovim
         nerd-fonts.hack
@@ -59,6 +60,7 @@
         typescript
         uv
         vim
+        vscode
         websocat
         xz
         yarn
