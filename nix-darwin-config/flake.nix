@@ -27,6 +27,7 @@
         commitizen
         cmatrix
         cue
+        databricks-cli
         docker
         firefox
         fzf
