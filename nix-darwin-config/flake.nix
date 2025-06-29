@@ -42,6 +42,7 @@
         neofetch
         neovim
         nerd-fonts.hack
+        ngrok
         pgadmin4
         pipenv
         (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
