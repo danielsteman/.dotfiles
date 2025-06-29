@@ -42,6 +42,7 @@
         neofetch
         neovim
         nerd-fonts.hack
+        nodejs_24
         ngrok
         pgadmin4
         pipenv
