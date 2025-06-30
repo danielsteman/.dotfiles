@@ -22,6 +22,7 @@
         aerospace
         aws-sam-cli
         awscli2
+        bfg-repo-cleaner
         code-cursor
         colima
         commitizen
