@@ -32,6 +32,7 @@
         docker
         firefox
         fzf
+        htop
         gh
         gnupg
         go
