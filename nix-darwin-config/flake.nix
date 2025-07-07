@@ -54,6 +54,7 @@
         (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
         pre-commit
         prettierd
+        postgresql_16
         pyenv
         pyright
         raycast
