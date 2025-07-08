@@ -48,8 +48,6 @@
         nerd-fonts.hack
         nodejs_24
         ngrok
-        pgadmin4
-        pgadmin4-desktopmode
         pipenv
         (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
         pre-commit
