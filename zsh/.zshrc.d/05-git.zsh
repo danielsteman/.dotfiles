@@ -31,3 +31,19 @@ gt() {
   git ls-files | awk '{print "./" $0}' | tree --fromfile
 }
 
+pr_retrigger_ready() {
+  local pr_num
+  pr_num=$(gh pr list --author "@me" --json number,title --jq '.[] | "\(.number)\t\(.title)"' | fzf --preview 'echo {}' | cut -f1)
+
+  if [[ -n "$pr_num" ]]; then
+    echo "Converting PR #$pr_num to draft..."
+    gh pr ready "$pr_num" --undo
+
+    echo "Marking PR #$pr_num as ready for review..."
+    gh pr ready "$pr_num"
+  else
+    echo "No PR selected."
+  fi
+}
+
+alias prr='pr_retrigger_ready'

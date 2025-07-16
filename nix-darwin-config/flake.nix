@@ -35,7 +35,6 @@
         firefox
         fzf
         htop
-        gemini-cli
         gh
         gnupg
         go
