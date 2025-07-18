@@ -57,8 +57,6 @@
         pyenv
         pyright
         raycast
-        rustc
-        rustfmt
         rustup
         sketchybar
         spotify
