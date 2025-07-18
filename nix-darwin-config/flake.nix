@@ -28,6 +28,7 @@
         code-cursor
         colima
         commitizen
+        chatgpt
         cmatrix
         cue
         databricks-cli
