@@ -23,8 +23,6 @@
         aws-sam-cli
         awscli2
         bfg-repo-cleaner
-        cargo
-        cargo-lambda
         code-cursor
         colima
         commitizen
@@ -57,7 +55,6 @@
         pyenv
         pyright
         raycast
-        rustup
         sketchybar
         spotify
         sqlite
