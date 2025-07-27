@@ -35,6 +35,7 @@
         fzf
         htop
         gh
+        gitmoji-cli
         gnupg
         go
         jira-cli-go
@@ -68,6 +69,7 @@
         xz
         yarn
         yq
+        zig
       ];
 
       nix.enable = false;
