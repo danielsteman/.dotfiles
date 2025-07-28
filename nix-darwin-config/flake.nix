@@ -23,6 +23,7 @@
         aws-sam-cli
         awscli2
         bfg-repo-cleaner
+        bun
         code-cursor
         colima
         commitizen
@@ -30,6 +31,7 @@
         cmatrix
         cue
         databricks-cli
+        deno
         docker
         firefox
         fzf
