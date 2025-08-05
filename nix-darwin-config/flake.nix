@@ -61,6 +61,7 @@
         sketchybar
         spotify
         sqlite
+        temporal-cli
         terraform
         tree
         typescript
