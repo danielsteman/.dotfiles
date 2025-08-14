@@ -14,6 +14,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    username = "danielsteman";
     configuration = { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
       # List packages installed in system profile. To search by name, run:
@@ -81,7 +82,7 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       # Set primary user
-      system.primaryUser = "danielsteman";
+      system.primaryUser = username;
 
       # Enable alternative shell support in nix-darwin.
       programs.zsh.enable = true;
@@ -121,6 +122,11 @@
       system.keyboard.enableKeyMapping = true;
 
       system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
+
+      homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        modules = [ ./home.nix ];
+      };
     };
   in
   {
