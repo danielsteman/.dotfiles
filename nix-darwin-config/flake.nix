@@ -126,9 +126,7 @@
     };
   in
   {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#simple
-    darwinConfigurations."danielsteman" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."${username}" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
     };
 
