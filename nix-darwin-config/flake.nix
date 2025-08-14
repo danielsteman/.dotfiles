@@ -123,10 +123,6 @@
 
       system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
 
-      homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [ ./home.nix ];
-      };
     };
   in
   {
@@ -134,6 +130,11 @@
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."danielsteman" = nix-darwin.lib.darwinSystem {
       modules = [ configuration ];
+    };
+
+    homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      modules = [ ./home.nix ];
     };
   };
 }
