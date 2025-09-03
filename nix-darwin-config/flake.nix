@@ -44,6 +44,7 @@
         jira-cli-go
         jq
         kitty
+        kubernetes-helm
         lua
         localstack
         neofetch
