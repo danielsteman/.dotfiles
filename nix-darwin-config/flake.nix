@@ -23,6 +23,7 @@
         aerospace
         aws-sam-cli
         awscli2
+        azure-cli
         bfg-repo-cleaner
         bun
         code-cursor
@@ -44,6 +45,7 @@
         jira-cli-go
         jq
         kitty
+        kubectl
         kubernetes-helm
         lua
         localstack
