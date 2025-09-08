@@ -66,7 +66,7 @@
         spotify
         sqlite
         temporal-cli
-        terraform
+        tenv
         tree
         typescript
         uv
