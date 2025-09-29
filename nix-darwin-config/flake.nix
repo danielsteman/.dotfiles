@@ -50,6 +50,7 @@
         kubernetes-helm
         lua
         localstack
+        mypy
         neofetch
         neovim
         nerd-fonts.hack
