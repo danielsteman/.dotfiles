@@ -33,6 +33,7 @@
         chatgpt
         cmatrix
         cue
+        chromedriver
         databricks-cli
         deno
         docker
@@ -75,6 +76,7 @@
         vim
         vscode
         websocat
+        wimlib
         xz
         yarn
         yq
