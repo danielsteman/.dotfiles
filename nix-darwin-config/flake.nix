@@ -51,6 +51,7 @@
         kubernetes-helm
         lua
         localstack
+        mkcert
         mypy
         neofetch
         neovim
