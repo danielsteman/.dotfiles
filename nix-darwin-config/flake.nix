@@ -22,7 +22,6 @@
       environment.systemPackages = with pkgs; [
         aerospace
         auth0-cli
-        aws-sam-cli
         awscli2
         azure-cli
         bfg-repo-cleaner
