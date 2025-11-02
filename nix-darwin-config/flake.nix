@@ -14,6 +14,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    lib = nixpkgs.lib;
     username = "danielsteman";
     configuration = { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
@@ -134,7 +135,18 @@
   in
   {
     darwinConfigurations."${username}" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        configuration
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users."${username}" = {
+            imports = [ ./home.nix ];
+            home.homeDirectory = lib.mkForce "/Users/${username}";
+          };
+        }
+      ];
     };
 
     homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
