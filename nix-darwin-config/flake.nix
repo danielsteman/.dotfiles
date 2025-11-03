@@ -62,6 +62,7 @@
         (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
         pre-commit
         prettierd
+        process-compose
         postgresql_16
         pyenv
         pyright
