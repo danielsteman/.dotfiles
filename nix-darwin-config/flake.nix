@@ -36,6 +36,7 @@
         chromedriver
         databricks-cli
         deno
+        direnv
         docker
         firefox
         fzf
