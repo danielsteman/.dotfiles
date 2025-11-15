@@ -25,5 +25,10 @@
     settings = {
       push.autoSetupRemote = true;
     };
+    settings = {
+      pull = {
+        rebase = false;
+      };
+    };
   };
 }
