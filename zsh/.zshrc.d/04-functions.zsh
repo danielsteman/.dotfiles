@@ -42,12 +42,22 @@ function set_tab_name {
 
 # fzf tf workspace list
 tfc() {
-  # Ensure we're in a Terraform directory
+  # Ensure terraform is available
   if ! command -v terraform >/dev/null 2>&1; then
     echo "terraform not found in PATH" >&2
     return 1
   fi
 
+  # If a workspace name is given, try to select it directly
+  if [[ -n "$1" ]]; then
+    if terraform workspace list | sed 's/*//; s/^[[:space:]]*//; s/[[:space:]]*$//' | grep -qx "$1"; then
+      terraform workspace select "$1"
+      return $?
+    fi
+    # If not found, fall through to fzf
+  fi
+
+  # Fallback to interactive selection
   local ws
   ws=$(terraform workspace list \
         | sed 's/*//; s/^[[:space:]]*//; s/[[:space:]]*$//' \
