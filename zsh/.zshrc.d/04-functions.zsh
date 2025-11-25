@@ -40,5 +40,21 @@ function set_tab_name {
     fi
 }
 
+# fzf tf workspace list
+tfc() {
+  # Ensure we're in a Terraform directory
+  if ! command -v terraform >/dev/null 2>&1; then
+    echo "terraform not found in PATH" >&2
+    return 1
+  fi
+
+  local ws
+  ws=$(terraform workspace list \
+        | sed 's/*//; s/^[[:space:]]*//; s/[[:space:]]*$//' \
+        | fzf --prompt='Terraform workspace> ' --ansi) || return 1
+
+  terraform workspace select "$ws"
+}
+
 add-zsh-hook chpwd set_tab_name
 add-zsh-hook precmd set_tab_name

@@ -69,7 +69,7 @@
         pyright
         raycast
         sketchybar
-        spotify
+        spotify-qt
         sqlite
         temporal-cli
         tenv
