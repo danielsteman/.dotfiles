@@ -74,6 +74,7 @@
         temporal-cli
         tenv
         tree
+        trivy
         typescript
         uv
         vim
