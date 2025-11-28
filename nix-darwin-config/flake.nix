@@ -53,6 +53,7 @@
         lua
         localstack
         mkcert
+        monitorcontrol
         mypy
         neofetch
         neovim
