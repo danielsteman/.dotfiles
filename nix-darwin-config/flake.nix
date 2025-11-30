@@ -60,6 +60,7 @@
         nerd-fonts.hack
         nodejs_24
         ngrok
+        pdm
         pipenv
         (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
         pre-commit
