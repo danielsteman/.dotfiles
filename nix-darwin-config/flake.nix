@@ -83,6 +83,7 @@
         vim
         vscode
         websocat
+        wget
         wimlib
         xz
         yarn
