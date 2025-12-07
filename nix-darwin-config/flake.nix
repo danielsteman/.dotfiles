@@ -22,6 +22,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
         aerospace
+        ansible
         auth0-cli
         awscli2
         azure-cli
