@@ -47,6 +47,7 @@
         go
         jira-cli-go
         jq
+        kind
         kitty
         kubectl
         kubernetes-helm
