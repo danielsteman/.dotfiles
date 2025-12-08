@@ -40,6 +40,7 @@
         deno
         direnv
         docker
+        fluxcd
         firefox
         fzf
         htop
