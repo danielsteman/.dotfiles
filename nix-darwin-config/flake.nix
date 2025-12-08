@@ -51,6 +51,7 @@
         kind
         kitty
         kubectl
+        kubectx
         kubernetes-helm
         lua
         localstack
@@ -62,6 +63,7 @@
         nerd-fonts.hack
         nodejs_24
         ngrok
+        packer
         pdm
         pipenv
         (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
