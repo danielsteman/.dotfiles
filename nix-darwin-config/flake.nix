@@ -22,6 +22,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages = with pkgs; [
         aerospace
+        age
         ansible
         auth0-cli
         awscli2
@@ -75,6 +76,7 @@
         pyright
         raycast
         sketchybar
+        sops
         spotify-qt
         sqlite
         temporal-cli
