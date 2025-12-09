@@ -95,6 +95,7 @@
         yarn
         yq
         zig
+        zstd
       ];
 
       nix.enable = false;
