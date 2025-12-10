@@ -63,6 +63,7 @@
         neofetch
         neovim
         nerd-fonts.hack
+        nmap
         nodejs_24
         ngrok
         packer
