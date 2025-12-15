@@ -67,6 +67,7 @@
         nmap
         nodejs_24
         ngrok
+        ollama
         packer
         pdm
         pipenv
