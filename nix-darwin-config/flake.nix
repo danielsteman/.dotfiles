@@ -49,6 +49,7 @@
         gitmoji-cli
         gnupg
         go
+        goose-cli
         jira-cli-go
         jq
         kind
