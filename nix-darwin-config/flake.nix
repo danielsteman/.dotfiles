@@ -96,6 +96,7 @@
         wget
         wimlib
         xz
+        yamllint
         yarn
         yq
         zig
