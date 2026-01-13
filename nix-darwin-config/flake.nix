@@ -33,7 +33,6 @@
         code-cursor
         colima
         commitizen
-        chatgpt
         cmatrix
         cue
         chromedriver
