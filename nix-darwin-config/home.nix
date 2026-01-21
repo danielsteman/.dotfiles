@@ -24,11 +24,9 @@
     enable = true;
     settings = {
       push.autoSetupRemote = true;
-    };
-    settings = {
-      pull = {
-        rebase = false;
-      };
+      pull.rebase = false;
+
+      alias.um = "!git fetch origin main && git merge origin/main";
     };
   };
 }
