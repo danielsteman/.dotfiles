@@ -30,85 +30,134 @@
     };
   };
 
-  # User-specific packages (moved from environment.systemPackages)
-  home.packages = with pkgs; [
-    act
-    aerospace
-    age
-    ansible
-    auth0-cli
-    awscli2
-    azure-cli
-    bfg-repo-cleaner
-    bun
-    code-cursor
-    colima
-    commitizen
-    cmatrix
-    cue
-    chromedriver
-    databricks-cli
-    deno
-    direnv
-    docker
-    fluxcd
-    firefox
-    fzf
-    htop
-    gh
-    gitmoji-cli
-    gnupg
-    go
-    goose-cli
-    jira-cli-go
-    jq
-    kind
-    kitty
-    kubectl
-    kubectx
-    kubernetes-helm
-    lua
-    localstack
-    mkcert
-    monitorcontrol
-    mypy
-    neofetch
-    neovim
-    nmap
-    nodejs_24
-    ngrok
-    ollama
-    packer
-    pdm
-    pipenv
-    (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
-    pre-commit
-    prettierd
-    process-compose
-    postgresql_16
-    pyenv
-    pyright
-    raycast
-    sketchybar
-    sops
-    spotify-qt
-    sqlite
-    temporal-cli
-    tenv
-    tree
-    trivy
-    typescript
-    uv
-    vim
-    vscode
-    websocat
-    wget
-    wimlib
-    xz
-    yamllint
-    yarn
-    yq
-    zig
-    zstd
-  ];
+  # User-specific packages organized by category
+  home.packages = with pkgs; let
+    # Cloud & Infrastructure tools
+    cloud = [
+      auth0-cli
+      awscli2
+      azure-cli
+      databricks-cli
+      fluxcd
+      kubernetes-helm
+      kubectl
+      kubectx
+      kind
+      localstack
+      packer
+      trivy
+    ];
+
+    # Development languages & runtimes
+    languages = [
+      bun
+      deno
+      go
+      lua
+      nodejs_24
+      postgresql_16
+      sqlite
+      typescript
+      zig
+    ];
+
+    # Python development tools
+    python = [
+      mypy
+      pdm
+      pipenv
+      (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
+      pre-commit
+      pyenv
+      pyright
+      tenv
+      uv
+      yamllint
+    ];
+
+    # Development tools & editors
+    devTools = [
+      bfg-repo-cleaner
+      chromedriver
+      code-cursor
+      commitizen
+      direnv
+      fzf
+      gh
+      gitmoji-cli
+      neovim
+      prettierd
+      vim
+      vscode
+    ];
+
+    # Git & version control
+    gitTools = [
+      act
+      jira-cli-go
+    ];
+
+    # Container & orchestration
+    containers = [
+      colima
+      docker
+      process-compose
+    ];
+
+    # Security & encryption
+    security = [
+      age
+      gnupg
+      mkcert
+      sops
+    ];
+
+    # System utilities
+    systemUtils = [
+      ansible
+      cue
+      htop
+      jq
+      neofetch
+      nmap
+      tree
+      wget
+      websocat
+      xz
+      yq
+      zstd
+    ];
+
+    # GUI applications
+    guiApps = [
+      aerospace
+      firefox
+      kitty
+      monitorcontrol
+      raycast
+      sketchybar
+      spotify-qt
+    ];
+
+    # Other tools
+    misc = [
+      cmatrix
+      goose-cli
+      ngrok
+      ollama
+      temporal-cli
+      wimlib
+      yarn
+    ];
+  in
+    cloud
+    ++ languages
+    ++ python
+    ++ devTools
+    ++ gitTools
+    ++ containers
+    ++ security
+    ++ systemUtils
+    ++ guiApps
+    ++ misc;
 }
