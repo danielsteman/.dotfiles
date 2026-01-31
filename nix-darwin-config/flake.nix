@@ -18,88 +18,11 @@
     username = "danielsteman";
     configuration = { pkgs, ... }: {
       nixpkgs.config.allowUnfree = true;
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
+
+      # System-level packages (keep minimal - only what's needed system-wide)
+      # Most packages have been moved to home-manager (see home.nix)
       environment.systemPackages = with pkgs; [
-        act
-        aerospace
-        age
-        ansible
-        auth0-cli
-        awscli2
-        azure-cli
-        bfg-repo-cleaner
-        bun
-        code-cursor
-        colima
-        commitizen
-        cmatrix
-        cue
-        chromedriver
-        databricks-cli
-        deno
-        direnv
-        docker
-        fluxcd
-        firefox
-        fzf
-        htop
-        gh
-        gitmoji-cli
-        gnupg
-        go
-        goose-cli
-        jira-cli-go
-        jq
-        kind
-        kitty
-        kubectl
-        kubectx
-        kubernetes-helm
-        lua
-        localstack
-        mkcert
-        monitorcontrol
-        mypy
-        neofetch
-        neovim
-        nerd-fonts.hack
-        nmap
-        nodejs_24
-        ngrok
-        ollama
-        packer
-        pdm
-        pipenv
-        (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
-        pre-commit
-        prettierd
-        process-compose
-        postgresql_16
-        pyenv
-        pyright
-        raycast
-        sketchybar
-        sops
-        spotify-qt
-        sqlite
-        temporal-cli
-        tenv
-        tree
-        trivy
-        typescript
-        uv
-        vim
-        vscode
-        websocat
-        wget
-        wimlib
-        xz
-        yamllint
-        yarn
-        yq
-        zig
-        zstd
+        # Keep system packages minimal - most are now in home-manager
       ];
 
       nix.enable = false;

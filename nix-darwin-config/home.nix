@@ -29,4 +29,86 @@
       alias.um = "!git fetch origin main && git merge origin/main";
     };
   };
+
+  # User-specific packages (moved from environment.systemPackages)
+  home.packages = with pkgs; [
+    act
+    aerospace
+    age
+    ansible
+    auth0-cli
+    awscli2
+    azure-cli
+    bfg-repo-cleaner
+    bun
+    code-cursor
+    colima
+    commitizen
+    cmatrix
+    cue
+    chromedriver
+    databricks-cli
+    deno
+    direnv
+    docker
+    fluxcd
+    firefox
+    fzf
+    htop
+    gh
+    gitmoji-cli
+    gnupg
+    go
+    goose-cli
+    jira-cli-go
+    jq
+    kind
+    kitty
+    kubectl
+    kubectx
+    kubernetes-helm
+    lua
+    localstack
+    mkcert
+    monitorcontrol
+    mypy
+    neofetch
+    neovim
+    nmap
+    nodejs_24
+    ngrok
+    ollama
+    packer
+    pdm
+    pipenv
+    (poetry.withPlugins (p: [ p.poetry-plugin-export ]))
+    pre-commit
+    prettierd
+    process-compose
+    postgresql_16
+    pyenv
+    pyright
+    raycast
+    sketchybar
+    sops
+    spotify-qt
+    sqlite
+    temporal-cli
+    tenv
+    tree
+    trivy
+    typescript
+    uv
+    vim
+    vscode
+    websocat
+    wget
+    wimlib
+    xz
+    yamllint
+    yarn
+    yq
+    zig
+    zstd
+  ];
 }
