@@ -135,7 +135,6 @@
       kitty
       monitorcontrol
       raycast
-      sketchybar
       spotify-qt
     ];
 
