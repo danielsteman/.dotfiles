@@ -23,7 +23,7 @@
   programs.git = {
     enable = true;
     userName = "Daniel Steman";
-    userEmail = "daniel.steman@billygrace.com";
+    userEmail = "daniel-steman@live.nl";
     settings = {
       core.editor = "vim";
       core.excludesFile = "~/.gitignore_global";
