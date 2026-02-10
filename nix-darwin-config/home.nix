@@ -22,9 +22,23 @@
   # Git configuration
   programs.git = {
     enable = true;
+    userName = "Daniel Steman";
+    userEmail = "daniel.steman@billygrace.com";
     settings = {
+      core.editor = "vim";
+      core.excludesFile = "~/.gitignore_global";
+
       push.autoSetupRemote = true;
       pull.rebase = false;
+      fetch.prune = true;
+
+      diff.algorithm = "histogram";
+      diff.colorMoved = "default";
+
+      merge.conflictstyle = "zdiff3";
+
+      branch.sort = "-committerdate";
+      tag.sort = "-version:refname";
 
       alias.um = "!git fetch origin main && git merge origin/main -m \"🔀 Merge origin/main into $(git rev-parse --abbrev-ref HEAD)\"";
     };
