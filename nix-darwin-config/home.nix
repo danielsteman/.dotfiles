@@ -26,7 +26,7 @@
       push.autoSetupRemote = true;
       pull.rebase = false;
 
-      alias.um = "!git fetch origin main && git merge origin/main";
+      alias.um = "!git fetch origin main && git merge origin/main -m \"🔀 Merge origin/main into $(git rev-parse --abbrev-ref HEAD)\"";
     };
   };
 
