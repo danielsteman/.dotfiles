@@ -22,9 +22,11 @@
   # Git configuration
   programs.git = {
     enable = true;
-    userName = "Daniel Steman";
-    userEmail = "daniel-steman@live.nl";
     settings = {
+      user = {
+        name = "Daniel Steman";
+        email = "daniel-steman@live.nl";
+      };
       core.editor = "vim";
       core.excludesFile = "~/.gitignore_global";
 
