@@ -162,7 +162,7 @@
       ollama
       temporal-cli
       wimlib
-      yarn
+      yarn-berry
     ];
   in
     cloud
