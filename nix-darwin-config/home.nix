@@ -98,6 +98,7 @@
       code-cursor
       commitizen
       direnv
+      esphome
       fzf
       gh
       gitmoji-cli
@@ -162,7 +163,7 @@
       ollama
       temporal-cli
       wimlib
-      yarn-berry
+      yarn
     ];
   in
     cloud
