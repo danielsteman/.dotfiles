@@ -77,6 +77,14 @@
       zig
     ];
 
+    # Haskell
+    haskell = [
+      ghc
+      cabal-install
+      haskell-language-server
+      stack
+    ];
+
     # Python development tools
     python = [
       mypy
@@ -167,6 +175,7 @@
   in
     cloud
     ++ languages
+    ++ haskell
     ++ python
     ++ devTools
     ++ gitTools
