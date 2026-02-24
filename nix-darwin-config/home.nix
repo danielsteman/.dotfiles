@@ -152,7 +152,6 @@
       kitty
       monitorcontrol
       raycast
-      spotify-qt
     ];
 
     # Other tools
