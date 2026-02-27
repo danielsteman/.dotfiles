@@ -109,6 +109,7 @@
       esphome
       fzf
       gh
+      gh-dash
       gitmoji-cli
       neovim
       prettierd
