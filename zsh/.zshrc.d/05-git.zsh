@@ -98,3 +98,26 @@ git-my-branches() {
 }
 
 alias gcfzf=git-my-branches
+
+# FZF-based PR browser: list PRs with gh, pick one, open in browser
+gh-pr-browse() {
+  if ! command -v gh >/dev/null 2>&1; then
+    echo "Error: gh is not installed." >&2
+    return 1
+  fi
+
+  local pr_num
+  pr_num=$(gh pr list --json number,title,author,headRefName \
+    --jq '.[] | "\(.number)\t\(.title)\t\(.author.login)\t\(.headRefName)"' |
+    column -t -s $'\t' |
+    fzf --header="Select a PR to open in browser" --height=40% --border |
+    awk '{print $1}')
+
+  if [[ -n "$pr_num" ]]; then
+    gh pr view "$pr_num" --web
+  else
+    echo "No PR selected."
+  fi
+}
+
+alias prb='gh-pr-browse'
