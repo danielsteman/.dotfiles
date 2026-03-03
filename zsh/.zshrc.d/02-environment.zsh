@@ -48,3 +48,5 @@ export PATH="$PATH:$HOME/go/bin"
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
+# Colima lightweight Docker runtime
+export DOCKER_HOST=unix:///Users/danielsteman/.colima/default/docker.sock
