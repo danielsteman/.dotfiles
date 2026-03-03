@@ -37,6 +37,7 @@ alias gmm='git merge main'
 alias gmd='git merge development'
 alias grmc='gcp && gpl && gc - && gmp && gph'  # If 'gcp' doesn't exist, you can remove it or define it as needed.
 alias cdr='cd "$(git rev-parse --show-toplevel || echo .)"'
+alias ghd='gh-dash'
 
 # Terraform
 alias tf='terraform'
