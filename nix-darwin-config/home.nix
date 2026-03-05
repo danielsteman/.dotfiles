@@ -40,7 +40,7 @@
       merge.conflictstyle = "zdiff3";
 
       branch.sort = "-committerdate";
-      tag.sort = "-version:refname";
+      tag.sort = "-creatordate";
 
       alias.um = "!git fetch origin main && git merge origin/main -m \"🔀 Merge origin/main into $(git rev-parse --abbrev-ref HEAD)\"";
     };
@@ -166,6 +166,7 @@
     # Other tools
     misc = [
       cmatrix
+      cook-cli
       goose-cli
       ngrok
       ollama
