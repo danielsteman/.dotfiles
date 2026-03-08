@@ -103,6 +103,7 @@
     devTools = [
       bfg-repo-cleaner
       chromedriver
+      claude-code
       code-cursor
       commitizen
       direnv
