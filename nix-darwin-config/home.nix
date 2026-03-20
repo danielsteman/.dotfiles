@@ -59,7 +59,6 @@
       kubectl
       kubectx
       kind
-      localstack
       packer
       trivy
     ];
@@ -145,7 +144,6 @@
       cue
       htop
       jq
-      neofetch
       nmap
       tree
       wget
