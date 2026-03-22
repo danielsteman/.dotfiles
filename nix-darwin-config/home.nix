@@ -4,7 +4,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "danielsteman";
-  # home.homeDirectory is set in flake.nix
+  home.homeDirectory = "/Users/danielsteman";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
