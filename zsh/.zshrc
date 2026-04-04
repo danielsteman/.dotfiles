@@ -14,3 +14,9 @@ for rcfile in $HOME/.zshrc.d/*.zsh; do
   [ -r "$rcfile" ] && source "$rcfile"
 done
 
+
+# opencode
+export PATH=/Users/danielsteman/.opencode/bin:$PATH
+
+# Added by Windsurf
+export PATH="/Users/danielsteman/.codeium/windsurf/bin:$PATH"
