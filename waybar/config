@@ -1,0 +1,29 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "width": "100%",
+    "spacing": 10,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "radius": 6,
+    "opacity": 1.0,
+    "background": "#1e1e2e",
+    "foreground": "#cdd6f4",
+    "font-family": "JetBrains Mono Nerd Font",
+    "font-size": 12,
+    "clock": {
+        "format": "{:%H:%M:%S %Y-%m-%d}",
+        "interval": 1
+    },
+    "modules-left": ["clock"],
+    "modules-center": [],
+    "modules-right": ["tray", "battery", "memory", "cpu", "network", "pulseaudio"],
+    "tray": {
+        "spacing": 10,
+        "icon-size": 16
+    },
+    "style": "themes/mocha.css"
+}
