@@ -240,3 +240,4 @@ cython_debug/
 #.idea/
 
 .DS_store
+node_modules/
