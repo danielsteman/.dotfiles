@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/danielsteman/.dotfiles/compare/v1.1.0...v1.2.0) (2026-05-26)
+
+### 🚀 Features
+
+* add yolo alias for claude skip permissions ([01d2baf](https://github.com/danielsteman/.dotfiles/commit/01d2bafd38d8af7b77c577d84ea802ac93352495))
+
 ## [1.1.0](https://github.com/danielsteman/.dotfiles/compare/v1.0.0...v1.1.0) (2026-05-21)
 
 ### 🚀 Features
