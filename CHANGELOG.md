@@ -1,3 +1,13 @@
+## [1.2.1](https://github.com/danielsteman/.dotfiles/compare/v1.2.0...v1.2.1) (2026-05-29)
+
+### 🐛 Bug Fixes
+
+* hyprland conf after upgrading ([f93854a](https://github.com/danielsteman/.dotfiles/commit/f93854ae62f5dd45fa4a4f341883978ae754fe75))
+
+### 🤖 CI
+
+* allow to write release ([f78f08b](https://github.com/danielsteman/.dotfiles/commit/f78f08b2fb9b1b7058db5cdeda0a607871872dc6))
+
 ## [1.2.0](https://github.com/danielsteman/.dotfiles/compare/v1.1.0...v1.2.0) (2026-05-26)
 
 ### 🚀 Features
