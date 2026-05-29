@@ -73,3 +73,6 @@ alias lock='open /System/Library/CoreServices/ScreenSaverEngine.app'
 
 # pipenv
 alias iv='PIPENV_VENV_IN_PROJECT=1 pipenv install --dev'
+
+# Claude
+alias yolo='claude --dangerously-skip-permissions'
