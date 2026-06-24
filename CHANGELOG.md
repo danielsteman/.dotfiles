@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/danielsteman/.dotfiles/compare/v1.3.0...v1.3.1) (2026-06-24)
+
+### 🐛 Bug Fixes
+
+* light dark toggle ([03e81f4](https://github.com/danielsteman/.dotfiles/commit/03e81f4381bcfd8121df0cc2e0dcb5910e27b05f))
+
 ## [1.3.0](https://github.com/danielsteman/.dotfiles/compare/v1.2.1...v1.3.0) (2026-06-18)
 
 ### 🚀 Features
