@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/danielsteman/.dotfiles/compare/v1.3.1...v1.4.0) (2026-07-01)
+
+### 🚀 Features
+
+* add age key file path and headroom to yolo alias ([5038290](https://github.com/danielsteman/.dotfiles/commit/5038290ebca5287fd398dffdd6cc7992a0744a3e))
+
 ## [1.3.1](https://github.com/danielsteman/.dotfiles/compare/v1.3.0...v1.3.1) (2026-06-24)
 
 ### 🐛 Bug Fixes
