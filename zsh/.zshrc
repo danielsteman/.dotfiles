@@ -20,3 +20,5 @@ export PATH=/Users/danielsteman/.opencode/bin:$PATH
 
 # Added by Windsurf
 export PATH="/Users/danielsteman/.codeium/windsurf/bin:$PATH"
+
+export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
