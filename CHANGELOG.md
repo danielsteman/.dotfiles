@@ -1,3 +1,17 @@
+## [1.5.0](https://github.com/danielsteman/.dotfiles/compare/v1.4.0...v1.5.0) (2026-08-06)
+
+### 🚀 Features
+
+* add Zed config and fix unsafe kitty Makefile target ([1e626a3](https://github.com/danielsteman/.dotfiles/commit/1e626a3d3663991ae5bb002afd50c2903c7f2e53))
+
+### ⏪ Reverts
+
+* headroom alias ([7b8d66e](https://github.com/danielsteman/.dotfiles/commit/7b8d66ee5aed75045edb063f119b929163b98b81))
+
+### 🔧 Chore
+
+* remove pyenv ([160321f](https://github.com/danielsteman/.dotfiles/commit/160321f8a3f89c2c9dcfe9a11eb8dba94580aacf))
+
 ## [1.4.0](https://github.com/danielsteman/.dotfiles/compare/v1.3.1...v1.4.0) (2026-07-01)
 
 ### 🚀 Features
