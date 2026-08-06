@@ -16,10 +16,10 @@ NVIM_LINK   := $(HOME)/.config/nvim
 AEROSPACE_SOURCE := $(HOME)/.dotfiles/aerospace/.aerospace.toml
 AEROSPACE_LINK   := $(HOME)/.aerospace.toml
 
-# Kitty config
-KITTY_SOURCE := $(HOME)/.dotfiles/kitty
-KITTY_CONF_LINK := $(HOME)/.config/kitty/kitty.conf
-KITTY_SSH_CONF_LINK := $(HOME)/.config/kitty/ssh.conf
+# Zed config
+ZED_SOURCE := $(HOME)/.dotfiles/zed
+ZED_SETTINGS_LINK := $(HOME)/.config/zed/settings.json
+ZED_KEYMAP_LINK := $(HOME)/.config/zed/keymap.json
 
 # Check if XDG_CONFIG_HOME is set
 XDG_CONFIG_HOME := $(shell echo $$XDG_CONFIG_HOME)
@@ -70,19 +70,21 @@ install:
 	@echo "AeroSpace symlink created:"
 	@echo "  $(AEROSPACE_LINK) -> $(AEROSPACE_SOURCE)"
 
-	@echo "Installing Kitty config from '$(KITTY_SOURCE)'..."
+	@echo "Kitty config is managed via a whole-directory symlink (~/.config/kitty -> $(HOME)/.dotfiles/kitty), already in place."
 
-	# Remove existing kitty.conf or link
-	rm -f $(KITTY_CONF_LINK)
+	@echo "Installing Zed config from '$(ZED_SOURCE)'..."
 
-	# Remove existing ssh.conf or link
-	rm -f $(KITTY_SSH_CONF_LINK)
+	# Remove existing settings.json or link
+	rm -f $(ZED_SETTINGS_LINK)
 
-	# Create new symlinks for Kitty config
-	mkdir -p $(HOME)/.config/kitty
-	ln -s $(KITTY_SOURCE)/kitty.conf $(KITTY_CONF_LINK)
-	ln -s $(KITTY_SOURCE)/ssh.conf $(KITTY_SSH_CONF_LINK)
-	@echo "Kitty symlinks created:"
-	@echo "  $(KITTY_CONF_LINK) -> $(KITTY_SOURCE)/kitty.conf"
-	@echo "  $(KITTY_SSH_CONF_LINK) -> $(KITTY_SOURCE)/ssh.conf"
+	# Remove existing keymap.json or link
+	rm -f $(ZED_KEYMAP_LINK)
+
+	# Create new symlinks for Zed config
+	mkdir -p $(HOME)/.config/zed
+	ln -s $(ZED_SOURCE)/settings.json $(ZED_SETTINGS_LINK)
+	ln -s $(ZED_SOURCE)/keymap.json $(ZED_KEYMAP_LINK)
+	@echo "Zed symlinks created:"
+	@echo "  $(ZED_SETTINGS_LINK) -> $(ZED_SOURCE)/settings.json"
+	@echo "  $(ZED_KEYMAP_LINK) -> $(ZED_SOURCE)/keymap.json"
 
