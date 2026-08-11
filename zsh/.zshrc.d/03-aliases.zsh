@@ -76,3 +76,4 @@ alias iv='PIPENV_VENV_IN_PROJECT=1 pipenv install --dev'
 
 # Claude
 alias yolo='claude --dangerously-skip-permissions'
+alias yolo2='CLAUDE_CONFIG_DIR=~/.claude-second claude --dangerously-skip-permissions'
