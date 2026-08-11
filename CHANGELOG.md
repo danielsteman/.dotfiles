@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/danielsteman/.dotfiles/compare/v1.5.0...v1.5.1) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* add keybindings for normy kb ([b2a524c](https://github.com/danielsteman/.dotfiles/commit/b2a524ca9ae7ffb0c4f062ed7673cd06ef40d364))
+* we use zed now ([a608ac8](https://github.com/danielsteman/.dotfiles/commit/a608ac82be545cb6d40f9649c06e6d2b69043677))
+
 ## [1.5.0](https://github.com/danielsteman/.dotfiles/compare/v1.4.0...v1.5.0) (2026-08-06)
 
 ### 🚀 Features
