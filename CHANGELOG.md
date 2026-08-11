@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/danielsteman/.dotfiles/compare/v1.5.1...v1.6.0) (2026-08-11)
+
+### 🚀 Features
+
+* add yolo2 ([85c810e](https://github.com/danielsteman/.dotfiles/commit/85c810ee60bbf4e3d1a62991c0de595574076d92))
+
 ## [1.5.1](https://github.com/danielsteman/.dotfiles/compare/v1.5.0...v1.5.1) (2026-08-11)
 
 ### 🐛 Bug Fixes
