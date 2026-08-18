@@ -1,3 +1,9 @@
+## [1.6.2](https://github.com/danielsteman/.dotfiles/compare/v1.6.1...v1.6.2) (2026-08-18)
+
+### 🐛 Bug Fixes
+
+* zed terminal font size ([bb7c9f1](https://github.com/danielsteman/.dotfiles/commit/bb7c9f147be79e668b80a89ea5720adc9718f7f8))
+
 ## [1.6.1](https://github.com/danielsteman/.dotfiles/compare/v1.6.0...v1.6.1) (2026-08-18)
 
 ### 🐛 Bug Fixes
