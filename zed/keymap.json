@@ -26,4 +26,43 @@
       "cmd-down": "workspace::ActivatePaneDown"
     }
   },
+  // nvim parity: leader is space, same as vim.g.mapleader in nvim/init.lua
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // remap.lua: <leader>pv -> Oil (file tree instead of a buffer-based explorer)
+      "space p v": "project_panel::ToggleFocus",
+
+      // remap.lua: <C-j>/<C-k> scroll 15 lines
+      "ctrl-j": ["workspace::SendKeystrokes", "1 5 j"],
+      "ctrl-k": ["workspace::SendKeystrokes", "1 5 k"],
+
+      // telescope.lua: <leader>pf find_files, <C-p> git_files, <leader>ps live_grep
+      "space p f": "file_finder::Toggle",
+      "ctrl-p": "file_finder::Toggle",
+      "space p s": "pane::DeploySearch",
+
+      // lsp.lua: <leader>gd definition, <leader>vca code action, <leader>vd diagnostic float
+      "space g d": "editor::GoToDefinition",
+      "space v c a": "editor::ToggleCodeActions",
+      "space v d": "editor::Hover",
+
+      // fugitive.lua: <leader>gs Git status
+      "space g s": "git_panel::ToggleFocus",
+
+      // harpoon.lua: <C-e> quick menu (nearest equivalent is the tab switcher)
+      "ctrl-e": "tab_switcher::Toggle",
+
+      // multicursor.lua: <leader>n/<leader>N add cursor at next/previous match
+      "space n": "editor::SelectNext",
+      "space shift-n": "editor::SelectPrevious"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space n": "editor::SelectNext",
+      "space shift-n": "editor::SelectPrevious"
+    }
+  },
 ]
