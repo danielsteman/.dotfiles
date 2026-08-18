@@ -1,3 +1,9 @@
+## [1.6.1](https://github.com/danielsteman/.dotfiles/compare/v1.6.0...v1.6.1) (2026-08-18)
+
+### 🐛 Bug Fixes
+
+* update zed settings ([3339233](https://github.com/danielsteman/.dotfiles/commit/33392330823aa9ea2371d04dac9b152991e5dfc3))
+
 ## [1.6.0](https://github.com/danielsteman/.dotfiles/compare/v1.5.1...v1.6.0) (2026-08-11)
 
 ### 🚀 Features
