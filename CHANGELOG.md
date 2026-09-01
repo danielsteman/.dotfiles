@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/danielsteman/.dotfiles/compare/v1.6.2...v1.7.0) (2026-08-18)
+
+### 🚀 Features
+
+* add neovim keybindings to zed ([af2d5fe](https://github.com/danielsteman/.dotfiles/commit/af2d5fe31079bfd5af76301d76c5963fb2f8afaf))
+
 ## [1.6.2](https://github.com/danielsteman/.dotfiles/compare/v1.6.1...v1.6.2) (2026-08-18)
 
 ### 🐛 Bug Fixes
