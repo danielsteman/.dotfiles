@@ -1,3 +1,9 @@
+## [1.8.0](https://github.com/danielsteman/.dotfiles/compare/v1.7.0...v1.8.0) (2026-09-01)
+
+### 🚀 Features
+
+* update zed keymap ([7133fa6](https://github.com/danielsteman/.dotfiles/commit/7133fa65ab89c64b102f533417f6f3fc9bed2754))
+
 ## [1.7.0](https://github.com/danielsteman/.dotfiles/compare/v1.6.2...v1.7.0) (2026-08-18)
 
 ### 🚀 Features
