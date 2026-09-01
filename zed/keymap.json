@@ -65,4 +65,9 @@
       "space shift-n": "editor::SelectPrevious"
     }
   },
+  {
+    "bindings": {
+      "cmd-g": "git_panel::Toggle"
+    }
+  }
 ]
