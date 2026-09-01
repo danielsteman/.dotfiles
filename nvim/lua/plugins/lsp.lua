@@ -1,5 +1,4 @@
 return {
-	"VonHeikemen/lsp-zero.nvim",
 	branch = "v3.x",
 	dependencies = {
 		-- LSP Support
@@ -23,7 +22,6 @@ return {
 		{ "mfussenegger/nvim-lint" },
 	},
 	config = function()
-		local lsp = require("lsp-zero")
 		local mason = require("mason").setup()
 
 		local cmp = require("cmp")
