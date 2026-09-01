@@ -1,3 +1,9 @@
+## [1.8.1](https://github.com/danielsteman/.dotfiles/compare/v1.8.0...v1.8.1) (2026-09-01)
+
+### 🐛 Bug Fixes
+
+* get rid of lsp-zero ([d9b15e9](https://github.com/danielsteman/.dotfiles/commit/d9b15e94bf651c06a9127d3696cedec259ba47ac))
+
 ## [1.8.0](https://github.com/danielsteman/.dotfiles/compare/v1.7.0...v1.8.0) (2026-09-01)
 
 ### 🚀 Features
