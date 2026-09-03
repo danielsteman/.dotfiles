@@ -1,31 +1,35 @@
 return {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    config = function()
-        require("nvim-treesitter.configs").setup {
-            -- A list of parser names, or "all"
-            ensure_installed = { "javascript", "typescript", "c", "lua", "rust" },
-
-            -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
-
-            -- Automatically install missing parsers when entering buffer
-            -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-            auto_install = true,
-
-            ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-            -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-            highlight = {
-                -- `false` will disable the whole extension
-                enable = true,
-
-                additional_vim_regex_highlighting = { "tsx" },
-            },
-            autotag = {
-                enable = true,
-            }
-        }
-    end,
+	"nvim-treesitter/nvim-treesitter",
+	-- Pinned: the `main` rewrite drops `nvim-treesitter.configs` and needs a
+	-- different setup call entirely.
+	branch = "master",
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter.configs").setup({
+			ensure_installed = {
+				"bash",
+				"c",
+				"go",
+				"gomod",
+				"gosum",
+				"javascript",
+				"json",
+				"jsonc",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"nix",
+				"python",
+				"rust",
+				"toml",
+				"tsx",
+				"typescript",
+				"yaml",
+			},
+			sync_install = false,
+			auto_install = true,
+			highlight = { enable = true },
+			indent = { enable = true },
+		})
+	end,
 }
-
