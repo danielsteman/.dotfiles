@@ -1,85 +1,106 @@
+-- Neovim 0.11+ native LSP: servers are configured with `vim.lsp.config` and
+-- turned on with `vim.lsp.enable`. nvim-lspconfig only ships the per-server
+-- defaults (cmd, filetypes, root markers) that those calls merge into.
 return {
-	branch = "v3.x",
-	dependencies = {
-		-- LSP Support
-		{ "neovim/nvim-lspconfig" },
-		{ "williamboman/mason.nvim" },
-		{ "williamboman/mason-lspconfig.nvim" },
+	{ "mason-org/mason.nvim", opts = {} },
 
-		-- Autocompletion
-		{ "hrsh7th/nvim-cmp" },
-		{ "hrsh7th/cmp-buffer" },
-		{ "hrsh7th/cmp-path" },
-		{ "saadparwaiz1/cmp_luasnip" },
-		{ "hrsh7th/cmp-nvim-lsp" },
-		{ "hrsh7th/cmp-nvim-lua" },
+	{
+		"mason-org/mason-lspconfig.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"mason-org/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
+		opts = {
+			-- rust_analyzer and gopls already come from rustup and `go install`,
+			-- so Mason must not shadow them with its own copies.
+			ensure_installed = {
+				"bashls",
+				"jsonls",
+				"lua_ls",
+				"nil_ls",
+				"pyright",
+				"ruff",
+				"ts_ls",
+				"yamlls",
+			},
+		},
+		config = function(_, opts)
+			require("mason-lspconfig").setup(opts)
 
-		-- Snippets
-		{ "L3MON4D3/LuaSnip" },
-		{ "rafamadriz/friendly-snippets" },
-
-		-- Formatting
-		{ "mfussenegger/nvim-lint" },
-	},
-	config = function()
-		local mason = require("mason").setup()
-
-		local cmp = require("cmp")
-		local cmp_select = { behavior = cmp.SelectBehavior.Select }
-		local cmp_mappings = lsp.defaults.cmp_mappings({
-			["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-			["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-			["<C-y>"] = cmp.mapping.confirm({ select = true }),
-			["<C-Space>"] = cmp.mapping.complete(),
-		})
-
-		cmp.setup({
-			mapping = cmp_mappings,
-		})
-
-		lsp.on_attach(function(client, bufnr)
-			lsp.default_keymaps({ buffer = bufnr })
-
-			vim.keymap.set("n", "<leader>vd", function()
-				vim.diagnostic.open_float()
-			end, opts)
-			vim.keymap.set("n", "<leader>vca", function()
-				vim.lsp.buf.code_action()
-			end, opts)
-			vim.keymap.set("n", "<leader>gd", function()
-				vim.lsp.buf.definition()
-			end, opts)
-
-			if client.supports_method("textDocument/formatting") then
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					callback = function()
-						vim.lsp.buf.format({ async = true, bufnr = bufnr })
-					end,
-				})
-			end
-		end)
-
-		local nvim_lint = require("lint")
-
-        nvim_lint.linters_by_ft = {
-            ["*"] = { "prettier" },
-        }
-
-		local nvim_lsp = require("lspconfig")
-
-		nvim_lsp.rust_analyzer.setup({
-			settings = {
-				["rust-analyzer"] = {
-					diagnostics = {
-						disabled = { "unresolved-proc-macro" },
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						diagnostics = { globals = { "vim" } },
 					},
 				},
-			},
-		})
+			})
 
-		lsp.setup_servers({ "rust_analyzer", "pyright", "gopls" })
+			vim.lsp.config("pyright", {
+				settings = {
+					-- ruff owns imports and linting; pyright only does types.
+					pyright = { disableOrganizeImports = true },
+					python = {
+						analysis = { typeCheckingMode = "standard" },
+					},
+				},
+			})
 
-		lsp.setup()
-	end,
+			vim.lsp.config("gopls", {
+				settings = {
+					gopls = {
+						analyses = { unusedparams = true },
+						staticcheck = true,
+					},
+				},
+			})
+
+			vim.lsp.config("rust_analyzer", {
+				settings = {
+					["rust-analyzer"] = {
+						diagnostics = { disabled = { "unresolved-proc-macro" } },
+						check = { command = "clippy" },
+					},
+				},
+			})
+
+			vim.lsp.config("yamlls", {
+				settings = {
+					yaml = {
+						schemaStore = { enable = true },
+						keyOrdering = false,
+					},
+				},
+			})
+
+			-- Not Mason-managed, so enable them by hand.
+			vim.lsp.enable({ "gopls", "rust_analyzer" })
+		end,
+	},
+
+	{
+		"neovim/nvim-lspconfig",
+		lazy = true,
+		init = function()
+			vim.diagnostic.config({
+				virtual_text = { prefix = "●" },
+				severity_sort = true,
+				float = { border = "rounded", source = true },
+			})
+
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function(args)
+					local opts = { buffer = args.buf }
+
+					-- Neovim 0.11 already maps grn (rename), gra (code action),
+					-- grr (references), gri (implementation), gO (symbols) and K.
+					vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+					vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+					vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
+					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+				end,
+			})
+		end,
+	},
 }
