@@ -1,3 +1,16 @@
+## [1.9.0](https://github.com/danielsteman/.dotfiles/compare/v1.8.1...v1.9.0) (2026-09-03)
+
+### 🚀 Features
+
+* format neovim buffers on save with conform ([4657fa3](https://github.com/danielsteman/.dotfiles/commit/4657fa3e73c1d1aaf547693d1278a1efef54db63))
+* use blink.cmp for neovim completion ([d263a53](https://github.com/danielsteman/.dotfiles/commit/d263a53458b93a2aee60cc6efc8c2bb94d4e531e))
+
+### 🐛 Bug Fixes
+
+* pin nvim-treesitter to master and widen parser list ([7042323](https://github.com/danielsteman/.dotfiles/commit/70423235f8df4d50767611ce6e1df91d8d4423f0))
+* rename tsx ftplugin to typescriptreact ([de3457d](https://github.com/danielsteman/.dotfiles/commit/de3457d70d971b6a820b460c282b9e8a1e7c6caa))
+* restore neovim lsp config on native vim.lsp api ([890778d](https://github.com/danielsteman/.dotfiles/commit/890778d3dabfa7e2cbff53ccda7c3d884f19935a))
+
 ## [1.8.1](https://github.com/danielsteman/.dotfiles/compare/v1.8.0...v1.8.1) (2026-09-01)
 
 ### 🐛 Bug Fixes
