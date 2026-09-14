@@ -6,6 +6,7 @@ brew "ripgrep"
 
 # vim tools
 brew "neovim"
+brew "tree-sitter-cli"
 
 # languages
 brew "node"

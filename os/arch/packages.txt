@@ -11,6 +11,7 @@ linux
 linux-firmware
 make
 neovim
+tree-sitter-cli
 nvidia-open
 nvidia-utils
 openssh
