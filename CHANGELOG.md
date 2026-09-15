@@ -1,3 +1,9 @@
+## [1.9.1](https://github.com/danielsteman/.dotfiles/compare/v1.9.0...v1.9.1) (2026-09-14)
+
+### 🐛 Bug Fixes
+
+* treesitter for markdown ([b1c3315](https://github.com/danielsteman/.dotfiles/commit/b1c3315f7cbfa4f7e5dba7b1401842c503d30a65))
+
 ## [1.9.0](https://github.com/danielsteman/.dotfiles/compare/v1.8.1...v1.9.0) (2026-09-03)
 
 ### 🚀 Features
