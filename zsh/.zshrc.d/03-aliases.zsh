@@ -75,5 +75,17 @@ alias lock='open /System/Library/CoreServices/ScreenSaverEngine.app'
 alias iv='PIPENV_VENV_IN_PROJECT=1 pipenv install --dev'
 
 # Claude
-alias yolo='claude --dangerously-skip-permissions'
-alias yolo2='CLAUDE_CONFIG_DIR=~/.claude-second claude --dangerously-skip-permissions'
+# Bypass permissions where allowed, else auto mode (blocked instances silently
+# fall back to manual, so check the policy files instead of the exit code).
+yolo() {
+  local cfg=${CLAUDE_CONFIG_DIR:-$HOME/.claude}
+  if grep -qs '"disableBypassPermissionsMode": *"disable"' \
+      "$cfg/remote-settings.json" "$cfg/managed-settings.json" \
+      "/Library/Application Support/ClaudeCode/managed-settings.json" \
+      /etc/claude-code/managed-settings.json; then
+    claude --permission-mode auto "$@"
+  else
+    claude --dangerously-skip-permissions "$@"
+  fi
+}
+yolo2() { CLAUDE_CONFIG_DIR=$HOME/.claude-second yolo "$@" }
