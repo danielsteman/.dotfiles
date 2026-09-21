@@ -1,3 +1,9 @@
+## [1.10.1](https://github.com/danielsteman/.dotfiles/compare/v1.10.0...v1.10.1) (2026-09-21)
+
+### 🐛 Bug Fixes
+
+* **nvim:** add terraform supporot ([a7fbb40](https://github.com/danielsteman/.dotfiles/commit/a7fbb40ed679ace924d60f231788be0c90c498f9))
+
 ## [1.10.0](https://github.com/danielsteman/.dotfiles/compare/v1.9.1...v1.10.0) (2026-09-15)
 
 ### 🚀 Features
