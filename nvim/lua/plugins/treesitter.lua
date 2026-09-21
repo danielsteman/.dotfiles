@@ -12,6 +12,7 @@ return {
 			"go",
 			"gomod",
 			"gosum",
+			"hcl",
 			"javascript",
 			"json",
 			"lua",
@@ -20,12 +21,14 @@ return {
 			"nix",
 			"python",
 			"rust",
+			"terraform",
 			"toml",
 			"tsx",
 			"typescript",
 			"yaml",
 		}
 		require("nvim-treesitter").install(parsers)
+		vim.treesitter.language.register("terraform", { "tf", "terraform-vars" })
 
 		vim.api.nvim_create_autocmd("FileType", {
 			callback = function(ev)
