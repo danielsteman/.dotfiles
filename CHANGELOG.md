@@ -1,3 +1,13 @@
+## [1.10.0](https://github.com/danielsteman/.dotfiles/compare/v1.9.1...v1.10.0) (2026-09-15)
+
+### 🚀 Features
+
+* use dangerous mode with fallback to auto mode ([69d1a66](https://github.com/danielsteman/.dotfiles/commit/69d1a662a959ff63be44b9d9bf6a8c2834606e65))
+
+### 🐛 Bug Fixes
+
+* remove pin for telescope ([cd0a19c](https://github.com/danielsteman/.dotfiles/commit/cd0a19c11ca95ea8c9f4aefe7979aeb727794ccd))
+
 ## [1.9.1](https://github.com/danielsteman/.dotfiles/compare/v1.9.0...v1.9.1) (2026-09-14)
 
 ### 🐛 Bug Fixes
