@@ -1,3 +1,10 @@
+## [1.11.0](https://github.com/danielsteman/.dotfiles/compare/v1.10.1...v1.11.0) (2026-09-22)
+
+### 🚀 Features
+
+* **psql:** add .psqlrc with colored prompt and message colors ([710f294](https://github.com/danielsteman/.dotfiles/commit/710f29418b6158be68bbcf13fc208b4a441f6e01))
+* **psql:** pick pspg style from kitty light/dark state ([f1cb203](https://github.com/danielsteman/.dotfiles/commit/f1cb203ef637cdfdbef60acf0320064394d9688c))
+
 ## [1.10.1](https://github.com/danielsteman/.dotfiles/compare/v1.10.0...v1.10.1) (2026-09-21)
 
 ### 🐛 Bug Fixes
