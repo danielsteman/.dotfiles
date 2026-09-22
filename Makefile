@@ -21,6 +21,9 @@ ZED_SOURCE := $(HOME)/.dotfiles/zed
 ZED_SETTINGS_LINK := $(HOME)/.config/zed/settings.json
 ZED_KEYMAP_LINK := $(HOME)/.config/zed/keymap.json
 
+PSQL_SOURCE := $(HOME)/.dotfiles/psql/.psqlrc
+PSQL_LINK   := $(HOME)/.psqlrc
+
 # Check if XDG_CONFIG_HOME is set
 XDG_CONFIG_HOME := $(shell echo $$XDG_CONFIG_HOME)
 
@@ -87,4 +90,11 @@ install:
 	@echo "Zed symlinks created:"
 	@echo "  $(ZED_SETTINGS_LINK) -> $(ZED_SOURCE)/settings.json"
 	@echo "  $(ZED_KEYMAP_LINK) -> $(ZED_SOURCE)/keymap.json"
+
+	@echo "Installing psql config from '$(PSQL_SOURCE)'..."
+
+	rm -f $(PSQL_LINK)
+	ln -s $(PSQL_SOURCE) $(PSQL_LINK)
+	@echo "psql symlink created:"
+	@echo "  $(PSQL_LINK) -> $(PSQL_SOURCE)"
 

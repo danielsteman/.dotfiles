@@ -21,6 +21,8 @@ export PATH="$HOME/.local/bin:$PATH"
 # Java / Postgres (libpq) 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+export PSQL_COLORS='error=01;31:warning=01;35:note=01;36:locus=01'
+
 # Rust
 if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
