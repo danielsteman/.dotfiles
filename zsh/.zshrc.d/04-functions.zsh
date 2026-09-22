@@ -66,5 +66,16 @@ tfc() {
   terraform workspace select "$ws"
 }
 
+psql() {
+  command -v pspg >/dev/null 2>&1 || { command psql "$@"; return; }
+
+  local style=18
+  if [[ "$(cat "$HOME/.cache/kitty-theme-state" 2>/dev/null)" == "light" ]]; then
+    style=19
+  fi
+
+  PSQL_PAGER="pspg -X --no-mouse --style=$style" command psql "$@"
+}
+
 add-zsh-hook chpwd set_tab_name
 add-zsh-hook precmd set_tab_name
