@@ -24,6 +24,10 @@ ZED_KEYMAP_LINK := $(HOME)/.config/zed/keymap.json
 PSQL_SOURCE := $(HOME)/.dotfiles/psql/.psqlrc
 PSQL_LINK   := $(HOME)/.psqlrc
 
+CURSOR_STATUSLINE_SOURCE := $(HOME)/.dotfiles/cursor/statusline.sh
+CURSOR_STATUSLINE_LINK   := $(HOME)/.cursor/statusline.sh
+CURSOR_CLI_CONFIG        := $(HOME)/.cursor/cli-config.json
+
 # Check if XDG_CONFIG_HOME is set
 XDG_CONFIG_HOME := $(shell echo $$XDG_CONFIG_HOME)
 
@@ -97,4 +101,24 @@ install:
 	ln -s $(PSQL_SOURCE) $(PSQL_LINK)
 	@echo "psql symlink created:"
 	@echo "  $(PSQL_LINK) -> $(PSQL_SOURCE)"
+
+	@echo "Installing Cursor CLI status line from '$(CURSOR_STATUSLINE_SOURCE)'..."
+
+	mkdir -p $(HOME)/.cursor
+	rm -f $(CURSOR_STATUSLINE_LINK)
+	ln -s $(CURSOR_STATUSLINE_SOURCE) $(CURSOR_STATUSLINE_LINK)
+	chmod +x $(CURSOR_STATUSLINE_SOURCE)
+	@echo "Cursor statusline symlink created:"
+	@echo "  $(CURSOR_STATUSLINE_LINK) -> $(CURSOR_STATUSLINE_SOURCE)"
+
+	@if [ -f "$(CURSOR_CLI_CONFIG)" ]; then \
+		tmp=$$(mktemp); \
+		jq '.statusLine = {"type":"command","command":"~/.cursor/statusline.sh","padding":2}' \
+			"$(CURSOR_CLI_CONFIG)" > "$$tmp" && mv "$$tmp" "$(CURSOR_CLI_CONFIG)"; \
+		echo "Cursor cli-config.json: statusLine entry ensured"; \
+	else \
+		echo '{"version":1,"statusLine":{"type":"command","command":"~/.cursor/statusline.sh","padding":2}}' \
+			> "$(CURSOR_CLI_CONFIG)"; \
+		echo "Cursor cli-config.json created with statusLine"; \
+	fi
 
