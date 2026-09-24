@@ -1,3 +1,9 @@
+## [1.12.0](https://github.com/danielsteman/.dotfiles/compare/v1.11.0...v1.12.0) (2026-09-24)
+
+### 🚀 Features
+
+* **cursor:** add emoji CLI statusline and install symlink ([b313c20](https://github.com/danielsteman/.dotfiles/commit/b313c20ce2e77cc7badce5be501907a7b40583aa))
+
 ## [1.11.0](https://github.com/danielsteman/.dotfiles/compare/v1.10.1...v1.11.0) (2026-09-22)
 
 ### 🚀 Features
