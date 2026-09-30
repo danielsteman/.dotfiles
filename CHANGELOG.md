@@ -1,3 +1,9 @@
+## [1.12.1](https://github.com/danielsteman/.dotfiles/compare/v1.12.0...v1.12.1) (2026-09-30)
+
+### 🐛 Bug Fixes
+
+* **nvim:** stop lazy pinning treesitter to master ([861a3c6](https://github.com/danielsteman/.dotfiles/commit/861a3c64ac690842731ea956f858e0e6622452a0))
+
 ## [1.12.0](https://github.com/danielsteman/.dotfiles/compare/v1.11.0...v1.12.0) (2026-09-24)
 
 ### 🚀 Features
