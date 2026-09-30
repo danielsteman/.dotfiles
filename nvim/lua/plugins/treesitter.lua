@@ -3,7 +3,10 @@ return {
 	-- The `master` branch is frozen and its custom query directives call the
 	-- pre-0.11 single-node match API, which errors on every injection (fenced
 	-- code blocks, heredocs, <script> tags) on Neovim 0.12.
+	-- `version = false` is required: nvim-treesitter still ships a v0.10.0
+	-- tag on master, and lazy will follow that tag over `branch = "main"`.
 	branch = "main",
+	version = false,
 	build = ":TSUpdate",
 	config = function()
 		local parsers = {
