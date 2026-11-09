@@ -22,3 +22,5 @@ export PATH=/Users/danielsteman/.opencode/bin:$PATH
 export PATH="/Users/danielsteman/.codeium/windsurf/bin:$PATH"
 
 export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
+
+export AWS_PROFILE=AdministratorAccess-348513603635

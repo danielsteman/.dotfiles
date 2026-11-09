@@ -1,11 +1,3 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
   "project_panel": {
     "dock": "left"
@@ -39,36 +31,20 @@
   "minimap": {
     "show": "always"
   },
-  "buffer_font_fallbacks": [
-    "Courier New",
-    "monospace"
-  ],
+  "buffer_font_fallbacks": ["Courier New", "monospace"],
   "buffer_font_family": "MesloLGS Nerd Font Mono",
   "file_types": {
-    "plaintext": [
-      "*.cer"
-    ],
-    "javascript": [
-      "*.js"
-    ],
-    "yaml": [
-      "*.yml",
-      "*.yml"
-    ],
+    "plaintext": ["*.cer"],
+    "javascript": ["*.js"],
+    "yaml": ["*.yml", "*.yml"],
     "azure-pipelines": [
       "pipeline.yaml",
       "yaml/pipelinevariables.yml",
       "pipeline.yaml",
       "yaml/pipelinevariables.yml"
     ],
-    "html": [
-      "*.svg",
-      "*.svg"
-    ],
-    "gotmpl": [
-      "*.tmpl",
-      "*.tmpl"
-    ]
+    "html": ["*.svg", "*.svg"],
+    "gotmpl": ["*.tmpl", "*.tmpl"]
   },
   "colorize_brackets": true,
   "tab_size": 4,
@@ -93,8 +69,9 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "light",
-    "light": "Catppuccin Iced Latte (Blur)",
-    "dark": "Catppuccin Mocha (Blur) [Light]",
+    "light": "Catppuccin Iced Latte (Blur) [Heavy]",
+    "dark": "Catppuccin Macchiato (Blur) [Heavy]"
   },
-  "format_on_save": "on"
+  "format_on_save": "on",
+  "auto_update": false
 }
