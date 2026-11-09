@@ -1,3 +1,9 @@
+## [1.12.2](https://github.com/danielsteman/.dotfiles/compare/v1.12.1...v1.12.2) (2026-11-09)
+
+### 🐛 Bug Fixes
+
+* disable auto update ([e623abc](https://github.com/danielsteman/.dotfiles/commit/e623abcab9812208205c6699b9562c2c864facf0))
+
 ## [1.12.1](https://github.com/danielsteman/.dotfiles/compare/v1.12.0...v1.12.1) (2026-09-30)
 
 ### 🐛 Bug Fixes
